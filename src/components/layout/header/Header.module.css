@@ -1,0 +1,19 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Contenedor centrado */
+.container-header {
+    max-width: 1200px;   /* ancho máximo */
+    margin: 0 auto;      /* centra horizontalmente */
+    padding: 0 2rem;     /* separa logo y cart de los extremos */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

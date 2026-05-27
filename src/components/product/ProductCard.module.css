@@ -1,0 +1,66 @@
+
+.card {
+    background: var(--color-card);
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: white;
+    width: 240px; /* Ancho fijo para que el flex del padre las acomode */
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    transform: translateY(-4px);
+}
+
+.productImage {
+    flex-wrap: wrap;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;  /* Esto evita que la imagen se deforme */
+    border-radius: 8px;
+}
+
+.info {
+    padding: 1rem;
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #e11d48;
+    margin: 0 0 1rem 0;
+}
+
+.stock {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.addButton {
+    width: 80%;
+    padding: 0.75rem;
+    background-color: #111;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background-color: #222;
+}
+
+.like {
+    cursor: pointer;
+    margin-left: 10px;
+}

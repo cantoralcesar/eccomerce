@@ -1,0 +1,38 @@
+/* ==========================================
+    1. VARIABLES GLOBALES (AQUÍ VA EL ROOT)
+   ========================================== */
+:root {
+    /* Tus colores de marca (Cámbialos por los que a ti te gusten) */
+    --color-principal: #3498db;      /* Azul para botones principales o enlaces */
+    --color-secundario: #2ecc71;     /* Verde para precio, éxito o el botón de comprar */
+    --color-fondo-oscuro: #2c3e50;   /* Gris oscuro para el Header o Footer */
+    --color-fondo-claro: #f9f9f9;    /* Gris muy claro para el fondo de la web */
+    --color-texto: #333333;          /* Negro suave para los textos */
+    --color-borde: #e0e0e0;          /* Gris claro para los bordes de las tarjetas */
+
+    /* Puedes agregar fuentes o sombras si quieres */
+    --sombra-tarjeta: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================
+    2. RESETEO GLOBAL DEL NAVEGADOR
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Evita que el padding rompa los tamaños */
+}
+
+body {
+    
+    background-color: var(--color-fondo-claro); /* El fondo claro para todo el e-commerce */
+    color: var(--color-texto); /* El color de texto principal */
+    min-height: 100vh;
+}
+
+/* Estilos globales para los enlaces de navegación */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+

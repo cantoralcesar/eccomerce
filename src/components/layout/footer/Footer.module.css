@@ -1,0 +1,183 @@
+.footer {
+    width: 100%;
+    /*position: absolute;
+    bottom: 0;*/
+    background: linear-gradient(to right, #00093c, #2d0b00);
+    color: white;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.footer ul {
+    list-style: none; /* Quita los puntitos */
+    padding: 0; /* Elimina el padding por defecto */
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+.footer a {
+    text-decoration: none; /* Quita el subrayado */
+    color: var(--color-texto); /* Usa tu color global */
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--color-acento); /* Cambia de color al pasar el mouse */
+}
+
+.row {
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.col {
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+.col:nth-child(2), .col:nth-child(3) {
+    flex-basis: 15%;
+}
+
+.logo {
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.form {
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+}
+
+.form input {
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+}
+
+.form button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+/*
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
+    cursor: pointer;
+}*/
+
+/* 1. El contenedor principal (la lista) */
+.social-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 2. El enlace <a> convertido en un círculo */
+.social-list a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* El secreto de los círculos: mismo ancho y alto + border-radius del 50% */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; 
+
+    /* Fondo y borde inicial (puedes usar tus variables del :root) */
+    background-color: #ffffff; 
+    border: 1px solid var(--color-borde, #e0e0e0);
+
+    /* Animación suave para cuando pases el mouse */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* 3. Tamaño del icono de React Icons dentro del círculo */
+.icon {
+    font-size: 20px;
+    color: #555555; /* Color gris neutro por defecto */
+    transition: color 0.3s ease;
+}
+
+/* Efecto Hover para Facebook */
+.social-list a:hover:has(.facebook) {
+    background-color: #1877f2;
+    border-color: #1877f2;
+}
+.social-list a:hover .facebook {
+    color: white;
+}
+
+/* Efecto Hover para TikTok */
+.social-list a:hover:has(.tiktok) {
+    background-color: #000000;
+    border-color: #000000;
+}
+.social-list a:hover .tiktok {
+    color: white;
+}
+
+/* Efecto Hover para Instagram */
+.social-list a:hover:has(.instagram) {
+    background-color: #e1306c;
+    border-color: #e1306c;
+}
+.social-list a:hover .instagram {
+    color: white;
+}
+
+hr {
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.underline {
+    width: 100%;
+    height: 5px;
+    background: #767676;
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+}
+
+/*media querys*/
+@media (max-width: 768px) {
+    .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+}
