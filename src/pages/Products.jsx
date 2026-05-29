@@ -20,7 +20,7 @@ function Products() {
             <h2>Nuestros Productos</h2>
 
             {/* 3. El contenedor de la malla/grid de productos */}
-            <div className={ styles.productsFlex }>
+            <div className={styles.productsFlex}>
 
                 {listaProductos.map((prod) => (
                     // 4. El mapeo que renderiza cada tarjeta individual
@@ -40,3 +40,9 @@ function Products() {
 }
 
 export default Products;
+
+/**
+ * Products.jsx (La Página): Aquí es donde se hace el fetch, se obtiene el array de datos,
+ * y se ejecuta el .map(). Esta página es la que "mapea" la lista de productos y decide
+ *  renderizar múltiples instancias de la tarjeta.
+ **/
