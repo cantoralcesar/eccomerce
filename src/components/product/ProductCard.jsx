@@ -24,7 +24,7 @@ function ProductCard({ image, name, price, stock }) {
                 {stock > 0 ? 'Agregar al carrito' : 'Agotado'}
             </button>
 
-            <span className={ styles.like}
+            <span className={ styles.like }
                 onClick = {markAsFavorite}
                 >
                     {isFavorite ? "❤": "🤍"}

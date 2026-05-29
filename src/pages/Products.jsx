@@ -26,12 +26,12 @@ function Products() {
                     // 4. El mapeo que renderiza cada tarjeta individual
                     <ProductCard
 
-                    key={prod.id}
-                    image={prod.imagen}  // Pasamos 'imagen' del JSON a la prop 'image'
-                    name={prod.nombre}   // Pasamos 'nombre' del JSON a la prop 'name'
-                    price={prod.precio}  // Pasamos 'precio' del JSON a la prop 'price'
-                    // Si en el futuro usas el stock, se lo pasas aquí también: stock={prod.stock}
-                    stock={prod.stock}
+                        key={prod.id}
+                        image={prod.imagen}  // Pasamos 'imagen' del JSON a la prop 'image'
+                        name={prod.nombre}   // Pasamos 'nombre' del JSON a la prop 'name'
+                        price={prod.precio}  // Pasamos 'precio' del JSON a la prop 'price'
+                        // Si en el futuro usas el stock, se lo pasas aquí también: stock={prod.stock}
+                        stock={prod.stock}
                     />
                 ))}
             </div>

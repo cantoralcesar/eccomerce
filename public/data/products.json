@@ -4,69 +4,69 @@
         "nombre": "Auriculares Inalámbricos Premium",
         "precio": 89.99,
         "stock": 15,
-        "imagen": "/images/auriculares.avif"
+        "imagen": "/images/products/auriculares.avif"
     },
     {
         "id": 2,
         "nombre": "Teclado Mecánico RGB",
         "precio": 120.0,
         "stock": 8,
-        "imagen": "/images/teclado.avif"
+        "imagen": "/images/products/teclado.avif"
     },
     {
         "id": 3,
         "nombre": "Ratón Gamer Ergonómico",
         "precio": 45.5,
         "stock": 22,
-        "imagen": "/images/mouse.avif"
+        "imagen": "/images/products/mouse.avif"
     },
     {
         "id": 4,
         "nombre": "Monitor Gamer 24\" Full HD",
         "precio": 199.99,
         "stock": 5,
-        "imagen": "/images/monitor.avif"
+        "imagen": "/images/products/monitor.avif"
     },
     {
         "id": 5,
         "nombre": "Smartwatch Deportivo",
         "precio": 75.0,
         "stock": 0,
-        "imagen": "/images/smart.avif"
+        "imagen": "/images/products/smart.avif"
     },
     {
         "id": 6,
         "nombre": "Mochila para Laptop Impermeable",
         "precio": 39.99,
         "stock": 30,
-        "imagen": "/images/mochila.avif"
+        "imagen": "/images/products/mochila.avif"
     },
     {
         "id": 7,
         "nombre": "Lámpara de Escritorio LED",
         "precio": 25.8,
         "stock": 12,
-        "imagen": "/images/lampara.avif"
+        "imagen": "/images/products/lampara.avif"
     },
     {
         "id": 8,
         "nombre": "Silla Ergonómica de Oficina",
         "precio": 249.0,
         "stock": 4,
-        "imagen": "/images/silla.avif"
+        "imagen": "/images/products/silla.avif"
     },
     {
         "id": 9,
         "nombre": "Cargador Portátil 20000mAh",
         "precio": 34.5,
         "stock": 18,
-        "imagen": "/images/cargador.webp"
+        "imagen": "/images/products/cargador.webp"
     },
     {
         "id": 10,
         "nombre": "Cámara Web 1080p UltraHD",
         "precio": 59.99,
         "stock": 7,
-        "imagen": "/images/camara.webp"
+        "imagen": "/images/products/camara.webp"
     }
 ]

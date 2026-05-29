@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "nombre": "Carlos Mendoza",
+        "email": "carlos.mendoza@nexura.com",
+        "puesto": "Director de Tecnología (CTO)",
+        "foto": "/images/about_us/01.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Ana Belén Torres",
+        "email": "ana.torres@nexura.com",
+        "puesto": "Líder de Desarrollo Backend",
+        "foto": "/images/about_us/02.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Diego Alejandro Ramos",
+        "email": "diego.ramos@nexura.com",
+        "puesto": "Ingeniero de Sistemas Senior",
+        "foto": "/images/about_us/03.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Sofía Valentina Castro",
+        "email": "sofia.castro@nexura.com",
+        "puesto": "Diseñadora de Experiencia de Usuario (UX/UI)",
+        "foto": "/images/about_us/04.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Javier Eduardo Ortiz",
+        "email": "javier.ortiz@nexura.com",
+        "puesto": "Especialista en Seguridad de la Información",
+        "foto": "/images/about_us/05.jpg"
+    }
+]
