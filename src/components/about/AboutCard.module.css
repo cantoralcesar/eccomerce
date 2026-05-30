@@ -1,4 +1,4 @@
-.equipmentFlex {
+.AboutFlex {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
@@ -7,10 +7,10 @@
 }
 
 /* Estilos opcionales para cada tarjetita individual dentro de la fila */
-/*.memberCard {
+.memberCard {
     background-color: #f4f4f4;
     padding: 15px;
     border-radius: 8px;
     text-align: center;
-    width: 250px; /* Un ancho fijo para que se acomoden en fila 
-}*/
+    width: 250px; /* Un ancho fijo para que se acomoden en fila */
+}

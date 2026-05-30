@@ -3,7 +3,7 @@ import styles from "./AboutCard.module.css"; // Tus estilos para la malla del eq
 // Recibimos "teamList" que es la prop que se paso desde About.jsx
 function AboutCard({ teamList }) {
     return (
-        <div className={styles.equipmentFlex}>
+        <div className={styles.AboutFlex}>
             {/* ¡Aquí es donde se hace el mapeo en este escenario! */}
             {teamList.map((members) => (
                 <div key={members.id} className={styles.memberCard}>

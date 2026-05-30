@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import AboutCard from "../components/about/AboutCard"; // Tu componente de la lista
-import styles from "../pages/About.module.css"; // Si usas estilos para la página
+//import styles from "../pages/About.module.css";  Si usas estilos para la página
 
 function About() {
     // 1. Los tres estados
@@ -38,9 +38,10 @@ function About() {
     return (
         <div >
             <h2>Nuestro Equipo</h2>
-            <div className={styles.AboutFlex}>
+            <div>
                 
-                {/* Le pasamos la lista limpia al directorio para que la mapee */}
+                {/* Le pasamos la lista limpia al AboutCard.jsx para que la mapee */}
+                {/* Aquí le estás pasando la lista entera a una sola tarjeta en CSS*/}
                 <AboutCard teamList={team} />
         </div>
         </div>
