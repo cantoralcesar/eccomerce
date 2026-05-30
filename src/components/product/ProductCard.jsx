@@ -15,6 +15,7 @@ function ProductCard({ image, name, price, stock }) {
 
     return (
         <div className={styles.card}>
+            
             <img src={image} alt={name} className={styles.productImage} />
             <h3 className={styles.name}>{name}</h3>
             <p className={styles.price}>Precio: ${price}</p>

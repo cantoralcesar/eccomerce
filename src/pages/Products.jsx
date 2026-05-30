@@ -4,16 +4,32 @@ import styles from "../pages/Products.module.css";
 
 function Products() {
     // 1. El estado para guardar los 10 productos locales
-    const [listaProductos, setListaProductos] = useState([]);
+    const [listProducts, setlistProducts] = useState([]);
+
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     // 2. El useEffect que hace el fetch a la carpeta public
     useEffect(() => {
-        fetch('/data/products.json') // <-- Apunta a tu archivo en public/data/
+        fetch('/data/products.json') // <-- Apunta aL archivo en public/data/
 
-        .then((response) => response.json())
-        .then((data) => setListaProductos(data))
-        .catch((error) => console.error("Error al traer los productos:", error));
-    }, []); // Array vacío para que solo se ejecute UNA vez al entrar a la página
+        .then((response) => {
+            if (!response.ok) throw new Error("Error de carga");
+            return response.json();
+        })
+        .then((data) => {
+            setlistProducts(data);
+            setLoading(false);
+        })
+        .catch((err) => {
+            setError(err.message);
+            setLoading(false);
+        });
+    }, [])  // Array vacio para que solo se ejecute una vez al entrar a la página
+
+    if (loading) return <div>Cargando Productos</div>
+
+    if (error) return <div>Error: {error}</div>
 
     return (
         <div>
@@ -22,7 +38,7 @@ function Products() {
             {/* 3. El contenedor de la malla/grid de productos */}
             <div className={styles.productsFlex}>
 
-                {listaProductos.map((prod) => (
+                {listProducts.map((prod) => (
                     // 4. El mapeo que renderiza cada tarjeta individual
                     <ProductCard
 
@@ -30,7 +46,7 @@ function Products() {
                         image={prod.imagen}  // Pasamos 'imagen' del JSON a la prop 'image'
                         name={prod.nombre}   // Pasamos 'nombre' del JSON a la prop 'name'
                         price={prod.precio}  // Pasamos 'precio' del JSON a la prop 'price'
-                        // Si en el futuro usas el stock, se lo pasas aquí también: stock={prod.stock}
+                        // Si en el futuro se usa el stock, se lo pasa X aquí también: stock={prod.stock}
                         stock={prod.stock}
                     />
                 ))}

@@ -17,7 +17,7 @@ function Footer() {
                 <div className={styles.col}>
                     <h3>Información<div className={styles.underline}><span></span></div>
                     </h3>
-                    <p>contacto@mitienda.com</p>
+                    <p>contacto@nexura.com</p>
                 </div>
 
                 <div className={styles.col}>
