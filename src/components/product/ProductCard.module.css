@@ -1,13 +1,16 @@
 
 .card {
-    background: var(--color-card);
-    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    border: 1.5px solid var(--color-border-card);
     border-radius: 15px;
     padding: 15px;
     text-align: center;
     overflow: hidden;
     transition: all 0.3s ease;
-    background-color: white;
+    background-color: var(--color-fondo-card);
     width: 240px; /* Ancho fijo para que el flex del padre las acomode */
 }
 
@@ -17,16 +20,13 @@
 }
 
 .productImage {
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
     width: 100%;
     height: 180px;
     object-fit: cover;  /* Esto evita que la imagen se deforme */
     border-radius: 8px;
 }
 
-.info {
-    padding: 1rem;
-}
 
 .name {
     font-size: 1.1rem;
@@ -48,8 +48,9 @@
 
 .addButton {
     width: 80%;
+    height: 44px;
     padding: 0.75rem;
-    background-color: #111;
+    background-color: var(--color-btn);
     color: white;
     border: none;
     border-radius: 8px;
@@ -57,7 +58,7 @@
 }
 
 .addButton:hover {
-    background-color: #222;
+    background-color: var(--color-btn-hover);
 }
 
 .like {

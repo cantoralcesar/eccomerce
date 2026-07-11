@@ -1,0 +1,13 @@
+.info {
+    display: flex;
+    gap: 10px;
+}
+
+.btnQuantity {
+    border-radius: 8px;
+    cursor: pointer;
+
+    /* Transición suave */
+    transition: background-color 0.4s ease, transform 0.3s ease;
+
+}

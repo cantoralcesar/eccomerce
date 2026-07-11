@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
+
 import styles from "./ProductCard.module.css";
 import { useState } from "react";
 
-function ProductCard({ image, name, price, stock }) {
+function ProductCard({ id, image, name, price, stock }) {
     
     const [isFavorite, setIsFavorite] = useState(false);
 
@@ -19,17 +21,22 @@ function ProductCard({ image, name, price, stock }) {
             <img src={image} alt={name} className={styles.productImage} />
             <h3 className={styles.name}>{name}</h3>
             <p className={styles.price}>Precio: ${price}</p>
+            
             <p className={styles.stock}>Stock disponible: ${stock}</p>
-
-            <button className={styles.addButton} onClick={ToBuyClick} disabled={stock === 0}>
+            
+            <p><Link to={`/products/${id}`}>Ver más info</Link></p>
+            <div>
+                <button className={styles.addButton} onClick={ToBuyClick} disabled={stock === 0}>
                 {stock > 0 ? 'Agregar al carrito' : 'Agotado'}
-            </button>
+                </button>
 
-            <span className={styles.like}
-                onClick = {markAsFavorite}
+                <span className={styles.like}
+                    onClick = {markAsFavorite}
                 >
                     {isFavorite ? "❤": "🤍"}
-            </span>
+                </span>
+            </div>
+            
 
         </div>
     );

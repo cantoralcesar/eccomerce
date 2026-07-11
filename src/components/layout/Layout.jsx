@@ -6,9 +6,9 @@ import { Outlet } from "react-router-dom";
 export function Layout( ) {
     return (
         <div style={ {border: "1px solid red"}}>
-            <Header />
+            <Header />    {/* nav, logo, cart */}
             <main className="container-main">
-            <Outlet /> {/* Aquí se renderiza la página activa */}
+            <Outlet />    {/* ← aquí se inyectan las páginas */}
             </main>
             <Footer />
         </div>

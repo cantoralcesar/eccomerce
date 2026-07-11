@@ -1,0 +1,112 @@
+.card {
+    display: flex;
+    max-width: 50rem;
+    margin: 3rem auto;
+    gap: 20px;
+    padding: 50px;
+    border-radius: 8px;
+    
+    border: 1.5px solid var(--color-border-card);
+}
+
+.productImage { 
+    width: 50%;
+    height: 350px;
+    object-fit: cover;  /* Esto evita que la imagen se deforme */
+    border-radius: 8px;
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.info p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.title {
+    text-align: center;
+}
+
+.details {
+    margin: 8px 0;
+    /*border: 1px solid blue;*/
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.btnBuy, .btnAdd {
+    display: block;
+    margin: 20px auto;    /* auto en los lados lo centra horizontalmente */
+    width: 90%;
+    height: 44px;
+    padding: 15px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    /* Transición suave */
+    transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+.btnBuy {
+    background-color: var(--color-btn);
+    color: white;
+    border: none;
+    
+}
+
+.btnAdd {
+    background: var(--color-fondo-claro);
+    color: var(--color-btn);
+    border: 1px solid var(--color-btn);
+}
+
+.btnBuy:hover {
+    background-color: var(--color-btn-hover);
+}
+
+.btnAdd:hover {
+    background-color: var(--color-border-input);
+}
+
+.btnDisabled {
+    background-color: #ccc;
+    color: #666;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btnBuy, .btnAdd, .btnDisabled {
+    margin-top: 12px;  /* Separa el botón del texto */
+}
+
+
+/* ============================
+    RESPONSIVE
+   ============================ */
+
+/* Tablets y móviles grandes */
+@media (max-width: 768px) {
+    .card {
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .productImage {
+        margin: 3rem auto;
+        width: 80%;
+        height: 350px;
+        object-fit: cover;  /* Esto evita que la imagen se deforme */
+        border-radius: 8px;
+    }
+
+}
+
+    

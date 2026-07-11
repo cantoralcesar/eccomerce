@@ -41,7 +41,7 @@ function About() {
             <div>
                 
                 {/* Le pasamos la lista limpia al AboutCard.jsx para que la mapee */}
-                {/* Aquí le estás pasando la lista entera a una sola tarjeta en CSS*/}
+                {/* Aquí se esta pasando la lista entera a una sola tarjeta en CSS*/}
                 <AboutCard teamList={team} />
         </div>
         </div>

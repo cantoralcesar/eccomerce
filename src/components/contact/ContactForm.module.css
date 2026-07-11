@@ -1,0 +1,109 @@
+
+.formStyle {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+    max-width: 40rem;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    border: 1.5px solid var(--color-border-card);
+    border-radius: 8px;
+    background: var(--color-fondo-card); /* Fondo suave */
+}
+
+.formStyle h3 {
+    margin: 0 0 8px 0;
+    color: var(--color-texto);
+    font-size: 1.25rem;
+}
+
+.formStyle div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.formStyle label {
+    min-width: 140px;
+    font-weight: 500;
+    color: #444;
+}
+
+.formStyle input {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid var(--color-border-input);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.addButton {
+    display: block;
+    margin: 20px auto;    /* auto en los lados lo centra horizontalmente */
+    width: 80%;
+    padding: 0.75rem;
+    background-color: var(--color-btn);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.addButton:hover {
+    background-color: var(--color-btn-hover);
+}
+
+/* ============================
+    RESPONSIVE
+   ============================ */
+
+/* Tablets y móviles grandes */
+@media (max-width: 768px) {
+    .formStyle {
+        margin: 1.5rem auto;
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    .formStyle div {
+        flex-direction: column;   /* Label arriba, input abajo */
+        align-items: flex-start;  /* Alineados a la izquierda */
+        gap: 4px;
+    }
+
+    .formStyle label {
+        min-width: auto;          /* Quita el ancho fijo */
+        font-size: 0.9rem;
+    }
+
+    .formStyle input {
+        width: 100%;              /* Input ocupa todo el ancho */
+        padding: 10px;
+        font-size: 1rem;          /* Evita zoom en iOS */
+    }
+
+    .addButton {
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .formStyle {
+        margin: 0.5rem auto;
+        padding: 0.75rem;
+        border-radius: 0;         /* Opcional: bordes planos en móvil */
+    }
+
+    .formStyle h3 {
+        font-size: 1.1rem;
+    }
+
+    .addButton {
+        border-radius: 6px;
+    }
+}

@@ -1,6 +1,6 @@
-import Nav from "../nav/Nav";
 import Logo from "../logo/Logo";
-import Cart from "../cart/Cart";
+import Nav from "../nav/Nav";
+import CartNav from "../cart/CartNav";
 
 import styles from "./Header.module.css";
 
@@ -10,7 +10,7 @@ function Header() {
             <div className={styles['container-header']}>
                 <Logo />
                 <Nav />
-                <Cart count={3} />
+                <CartNav />
             </div>
         </header>
     );

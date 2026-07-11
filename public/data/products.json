@@ -4,69 +4,79 @@
         "nombre": "Auriculares Inalámbricos Premium",
         "precio": 89.99,
         "stock": 15,
-        "imagen": "/images/products/auriculares.avif"
+        "imagen": "/images/products/auriculares.avif",
+        "detalles": "Auriculares inalámbricos con sonido envolvente, batería de larga duración y diseño ergonómico para uso prolongado."
     },
     {
         "id": 2,
         "nombre": "Teclado Mecánico RGB",
         "precio": 120.0,
         "stock": 8,
-        "imagen": "/images/products/teclado.avif"
+        "imagen": "/images/products/teclado.avif",
+        "detalles": "Teclado mecánico con retroiluminación RGB personalizable, switches duraderos y diseño gamer."
     },
     {
         "id": 3,
         "nombre": "Ratón Gamer Ergonómico",
         "precio": 45.5,
         "stock": 22,
-        "imagen": "/images/products/mouse.avif"
+        "imagen": "/images/products/mouse.avif",
+        "detalles": "Ratón ergonómico con alta precisión, botones programables y diseño cómodo para largas sesiones de juego."
     },
     {
         "id": 4,
         "nombre": "Monitor Gamer 24\" Full HD",
         "precio": 199.99,
         "stock": 5,
-        "imagen": "/images/products/monitor.avif"
+        "imagen": "/images/products/monitor.avif",
+        "detalles": "Monitor de 24 pulgadas Full HD con tasa de refresco rápida y colores vibrantes, ideal para gaming."
     },
     {
         "id": 5,
         "nombre": "Smartwatch Deportivo",
         "precio": 75.0,
         "stock": 0,
-        "imagen": "/images/products/smart.avif"
+        "imagen": "/images/products/smart.avif",
+        "detalles": "Reloj inteligente con funciones deportivas, monitoreo de salud y resistencia al agua."
     },
     {
         "id": 6,
         "nombre": "Mochila para Laptop Impermeable",
         "precio": 39.99,
         "stock": 30,
-        "imagen": "/images/products/mochila.avif"
+        "imagen": "/images/products/mochila.avif",
+        "detalles": "Mochila resistente al agua con compartimento acolchado para laptop y múltiples bolsillos organizadores."
     },
     {
         "id": 7,
         "nombre": "Lámpara de Escritorio LED",
         "precio": 25.8,
         "stock": 12,
-        "imagen": "/images/products/lampara.avif"
+        "imagen": "/images/products/lampara.avif",
+        "detalles": "Lámpara LED ajustable con diferentes niveles de brillo y diseño moderno para oficina o estudio."
     },
     {
         "id": 8,
         "nombre": "Silla Ergonómica de Oficina",
         "precio": 249.0,
         "stock": 4,
-        "imagen": "/images/products/silla.avif"
+        "imagen": "/images/products/silla.avif",
+        "detalles": "Silla ergonómica con soporte lumbar, ajuste de altura y materiales transpirables para mayor comodidad."
     },
     {
         "id": 9,
         "nombre": "Cargador Portátil 20000mAh",
         "precio": 34.5,
         "stock": 18,
-        "imagen": "/images/products/cargador.webp"
+        "imagen": "/images/products/cargador.webp",
+        "detalles": "Powerbank de gran capacidad con carga rápida y múltiples puertos USB para dispositivos móviles."
     },
     {
         "id": 10,
         "nombre": "Cámara Web 1080p UltraHD",
         "precio": 59.99,
         "stock": 7,
-        "imagen": "/images/products/camara.webp"
+        "imagen": "/images/products/camara.webp",
+        "detalles": "Cámara web con resolución Full HD, micrófono integrado y compatibilidad con videollamadas en PC y laptop."
     }
 ]

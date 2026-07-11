@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import ProductCard from "../components/product/ProductCard";
 import styles from "../pages/Products.module.css";
 
@@ -10,7 +11,9 @@ function Products() {
     const [error, setError] = useState(null);
 
     // 2. El useEffect que hace el fetch a la carpeta public
-    useEffect(() => {
+    useEffect(
+        () => {
+            
         fetch('/data/products.json') // <-- Apunta aL archivo en public/data/
 
         .then((response) => {
@@ -43,10 +46,11 @@ function Products() {
                     <ProductCard
 
                         key={prod.id}
+                        id={prod.id}   // 👈 aquí pasas el id
                         image={prod.imagen}  // Pasamos 'imagen' del JSON a la prop 'image'
                         name={prod.nombre}   // Pasamos 'nombre' del JSON a la prop 'name'
                         price={prod.precio}  // Pasamos 'precio' del JSON a la prop 'price'
-                        // Si en el futuro se usa el stock, se lo pasa X aquí también: stock={prod.stock}
+                        // Si en el futuro se usa los detalles, se lo pasa X aquí también: detalles={prod.detalles}
                         stock={prod.stock}
                     />
                 ))}

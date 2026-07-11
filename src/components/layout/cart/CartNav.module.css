@@ -1,0 +1,30 @@
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border: 2px solid green;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 0;
+    border: 1px solid red;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #333;  /*inherit*/
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid mediumslateblue;
+}
+
+.menu li a:hover {
+    color: #007bff;
+}
