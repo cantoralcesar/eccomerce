@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import Products from './pages/Products';
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";                              // 👈 importa tu Cart.jsx
+import Login from "./pages/Login";
 
 // 👇 Importar el CartProvider
 import { CartProvider } from "./context/CartContext";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="products/:id" element={<ProductDetail />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />             {/* 👈 aquí agregas la ruta */}
       </Route>
     </Routes>

@@ -14,7 +14,7 @@ function CartNav(){
         <nav className={styles.nav}>
 
             <ul className={styles.menu}>
-                <li><Link to="/about">Hola, inicia sesión</Link></li>
+                <li><Link to="/login">Hola, inicia sesión</Link></li>
                 <li className={styles.cartIcon}><Link to="/cart"><img src={cartIcon} alt="Carro de compras" /><span>{totalItems}</span></Link></li>
             </ul>
 
