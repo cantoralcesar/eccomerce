@@ -3,11 +3,26 @@
     gap: 10px;
 }
 
-.btnQuantity {
-    border-radius: 8px;
-    cursor: pointer;
+.countItemQuantity{
+    margin: 0 12px;
+    font-weight: bold;
+    min-width: 10px;
+    text-align: center;
+}
+
+.countBtnDecrease, .countBtnIncrease  {
+    background-color: var(--color-btn);
+    color: white;
+    width: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
 
     /* Transición suave */
     transition: background-color 0.4s ease, transform 0.3s ease;
+}
 
+.countBtnDecrease:hover,
+.countBtnIncrease:hover {
+    background-color: var(--color-btn-hover);
 }

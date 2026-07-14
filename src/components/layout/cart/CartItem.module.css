@@ -1,84 +1,80 @@
 .cartItemContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 15px;
-  border: 1.5px solid var(--color-border-card);
-  border-radius: 8px;
-  padding: 12px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border: 1.5px solid var(--color-border-card);
+    border-radius: 8px;
+    padding: 12px 20px;
 }
 
 .cartItemImg {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 
 }
 
 .cartItemDetails {
-
-  flex-grow: 1;
-  text-align: left;
+    flex-grow: 1;
+    text-align: left;
 }
 
 .productName {
-  font-weight: 500;
-  font-size: 16px;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .productPrice {
-  color: #666;
-  font-size: 0.9rem;
+    color: #666;
+    font-size: 0.9rem;
 }
 
 .quantityControls {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .cartItemQuantity {
-  margin: 0 12px;
-  font-weight: bold;
-  min-width: 10px;
-  text-align: center;
+    margin: 0 12px;
+    font-weight: bold;
+    min-width: 10px;
+    text-align: center;
 }
 
 .cartItemSubtotal {
-  min-width: 120px;
-  text-align: right;
-  font-weight: bold;
+    min-width: 120px;
+    text-align: right;
+    font-weight: bold;
 }
 
 .decreaseBtn,
 .increaseBtn {
-  background-color: var(--color-btn);
-  color: white;
-  width: 30px;
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
+    background-color: var(--color-btn);
+    color: white;
+    width: 30px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .decreaseBtn:hover,
 .increaseBtn:hover {
-  background-color: var(--color-btn-hover);
+    background-color: var(--color-btn-hover);
 }
 
 /* Responsive: en móviles, cada ítem se apila */
 @media (max-width: 600px) {
-  .cartItemContainer {
-    flex-direction: column;
-    
-  }
+    .cartItemContainer {
+        flex-direction: column;
+    }
 
-
-  .cartItemSubtotal {
-    text-align: left;
-    min-width: auto;
-    margin-top: 10px;
-  }
+    .cartItemSubtotal {
+        text-align: left;
+        min-width: auto;
+        margin-top: 10px;
+    }
 }
 

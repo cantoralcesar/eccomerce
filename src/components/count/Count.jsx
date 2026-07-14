@@ -29,9 +29,9 @@ export function Count({ onChange, max }) {
         <div className={styles.info}>
             
             <div className={styles.btnQuantity}>
-                <button  onClick={decrease} disabled={count <= 1} >-</button>
-                <span>{count}</span>
-                <button  onClick={increase} disabled={count === max} >+</button>
+                <button className={styles.countBtnDecrease} onClick={decrease} disabled={count <= 1} > - </button>
+                <span className={styles.countItemQuantity}>{count}</span>
+                <button className={styles.countBtnIncrease} onClick={increase} disabled={count === max} > + </button>
             </div>
             
         </div>
