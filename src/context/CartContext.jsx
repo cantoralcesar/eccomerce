@@ -23,7 +23,7 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([]);
 
-    // 👉 Función para agregar productos
+    // 👉 Agregar producto o aumentar cantidad
     const addToCart = (product, quantity) => {
 
         // Si el producto existe cart = [{id=1, ...}, {id=2,...}]
@@ -40,16 +40,17 @@ export const CartProvider = ({ children }) => {
         }
     };
 
+    // Vaciar carrito
     const clearCart = () => {
         setCartItems([]);
     };
     
-    // Total de productos
+    // Obtener cantidad total
     const getCartQuantity = () => {
         return cartItems.reduce((acc, item) => acc + item.quantity, 0);  //acc es acumulador
     };
     
-    // Precio total
+    // Obtener total en dinero
     const getCartTotal = () => {
         return cartItems.reduce((acc, item) => acc + item.precio * item.quantity, 0);
     };

@@ -3,12 +3,21 @@ import { Link } from 'react-router-dom';
 import styles from "./ProductCard.module.css";
 import { useState } from "react";
 
+import { useCart } from '../../context/CartContext';
+import { toast } from "react-toastify"
+
 function ProductCard({ id, image, name, price, stock }) {
     
+    const { addToCart } = useCart();   // 👈 obtenemos la función del contexto (carrito agregar)
+
     const [isFavorite, setIsFavorite] = useState(false);
 
-    const ToBuyClick = () => {
-        alert(`Agregastes ${name} al carrito`);
+    const handleAddToCart = () => {
+        addToCart(
+            { id, imagen:image, nombre: name, precio: price, stock },
+            1  // 👈 cantidad inicial
+        )
+        toast.success(`Agregastes ${name} al carrito`);
     };
 
     const markAsFavorite = () => {
@@ -22,12 +31,16 @@ function ProductCard({ id, image, name, price, stock }) {
             <h3 className={styles.name}>{name}</h3>
             <p className={styles.price}>Precio: ${price}</p>
             
-            <p className={styles.stock}>Stock disponible: ${stock}</p>
+            <p className={styles.stock}>Stock disponible: {stock}</p>
             
             <p><Link to={`/products/${id}`}>Ver más info</Link></p>
             <div>
-                <button className={styles.addButton} onClick={ToBuyClick} disabled={stock === 0}>
-                {stock > 0 ? 'Agregar al carrito' : 'Agotado'}
+                <button
+                    className={styles.addButton}
+                    onClick={handleAddToCart}
+                    disabled={stock === 0}
+                >
+                    {stock > 0 ? 'Agregar al carrito' : 'Agotado'}
                 </button>
 
                 <span className={styles.like}

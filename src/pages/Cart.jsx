@@ -2,6 +2,7 @@
 
 import { useCart } from "../context/CartContext";
 
+import CartItem from "../components/layout/cart/CartItem";
 
 function Cart(){
 
@@ -10,35 +11,25 @@ function Cart(){
 
     return (
         <div>
-            <h1>Carrito</h1>
+            <h1>Carrito de Compras</h1>
+
+            {/* Si el carrito está vacío mostramos un mensaje */}
             {cartItems.length === 0 ? (
                 <p>No hay productos en el carrito.</p>
             ) : (
                 <ul>
+                    {/* Recorremos cada producto y lo renderizamos con CartItem */}
                     {cartItems.map((item, index) => (
-                        <li key={index}>
-                            {/* Imagen pequeña del producto */}
-                            <img
-                                src={item.imagen}
-                                alt={item.nombre}
-                                style={{ width: "50px", height: "50px", objectFit: "cover"}}
-                            />
-                            <br />
-                            {/* Nombre y precio unitario */}
-                            {item.nombre} - ${item.precio}
-                            <br />
-                            {/* Cantidad seleccionada */}
-                            Cantidad: {item.quantity}
-                            <br />
-                            {/* Subtotal por producto */}
-                            Subtotal: ${item.precio * item.quantity}
-                        </li>
+                        // Renderizamos cada producto del carrito usando el componente CartItem
+                        <CartItem key={index} item={item} />
                     ))}
                 </ul>
             )}
             {/* Totales calculados con funciones del contexto */}
             <h3>Total productos: {getCartQuantity()}</h3>
             <h3>Total a pagar: ${getCartTotal()}</h3>
+
+            {/* Botón para vaciar todo el carrito */}
             <button onClick={clearCart}>Vaciar carrito</button>
         </div>
     );

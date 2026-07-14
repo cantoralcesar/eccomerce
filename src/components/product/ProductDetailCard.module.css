@@ -40,7 +40,7 @@
     font-size: 0.95rem;
 }
 
-.btnBuy, .btnAdd {
+.btnBuy, .btnAdd, .btnDisabled {
     display: block;
     margin: 20px auto;    /* auto en los lados lo centra horizontalmente */
     width: 90%;
@@ -76,7 +76,7 @@
 
 .btnDisabled {
     background-color: #ccc;
-    color: #666;
+    color: black;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
