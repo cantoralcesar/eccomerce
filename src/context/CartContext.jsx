@@ -5,10 +5,10 @@
  */
 import  { useState, useContext, createContext } from 'react';
 
-// Creacion del contexto
+// Creación del contexto
 export const CartContext = createContext();
 
-// Creacion del custom hook - hook personalizado
+// Creación del custom hook - hook personalizado
 // Consumidor
 export const useCart = () => {
     const context = useContext(CartContext);
@@ -40,6 +40,26 @@ export const CartProvider = ({ children }) => {
         }
     };
 
+    // 👉 Eliminar producto del carrito
+const removeFromCart = (productId) => {
+    setCartItems(prevCart =>
+        prevCart.filter(item => item.id !== productId)
+    );
+};
+
+// 👉 Disminuir cantidad
+const decreaseFromCart = (productId) => {
+    setCartItems(prevCart =>
+        prevCart
+            .map(item =>
+                item.id === productId
+                    ? { ...item, quantity: item.quantity - 1 }
+                    : item
+            )
+            .filter(item => item.quantity > 0) // elimina si llega a 0
+    );
+};
+
     // Vaciar carrito
     const clearCart = () => {
         setCartItems([]);
@@ -59,6 +79,7 @@ export const CartProvider = ({ children }) => {
     <CartContext.Provider
         value={{
             cartItems, addToCart, clearCart,
+            removeFromCart, decreaseFromCart,
             getCartQuantity, getCartTotal}}>
             {children}
     </CartContext.Provider>

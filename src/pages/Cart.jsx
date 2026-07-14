@@ -1,4 +1,4 @@
-//import styles from "./Cart.module.css";
+import styles from "./Cart.module.css";
 
 import { useCart } from "../context/CartContext";
 
@@ -10,18 +10,21 @@ function Cart(){
     const { cartItems, clearCart, getCartQuantity, getCartTotal } = useCart();
 
     return (
-        <div>
+        
+        <div className={styles.cartStyle}>
             <h1>Carrito de Compras</h1>
 
             {/* Si el carrito está vacío mostramos un mensaje */}
             {cartItems.length === 0 ? (
                 <p>No hay productos en el carrito.</p>
             ) : (
-                <ul>
+                <ul className={styles.cartList}>
                     {/* Recorremos cada producto y lo renderizamos con CartItem */}
                     {cartItems.map((item, index) => (
                         // Renderizamos cada producto del carrito usando el componente CartItem
-                        <CartItem key={index} item={item} />
+                        <li key={index} >
+                            <CartItem item={item} />
+                        </li>
                     ))}
                 </ul>
             )}
@@ -30,7 +33,9 @@ function Cart(){
             <h3>Total a pagar: ${getCartTotal()}</h3>
 
             {/* Botón para vaciar todo el carrito */}
-            <button onClick={clearCart}>Vaciar carrito</button>
+            <button className={styles.cartBtn}
+                onClick={clearCart}>Vaciar carrito
+            </button>
         </div>
     );
 }

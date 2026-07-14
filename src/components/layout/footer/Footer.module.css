@@ -2,7 +2,7 @@
     width: 100%;
     /*position: absolute;
     bottom: 0;*/
-    background: linear-gradient(to right, #00093c, #2d0b00);
+    background: var(--color-nav-footer);
     color: white;
     padding: 100px 0 30px;
     border-top-left-radius: 125px;
@@ -104,10 +104,10 @@
     /* El secreto de los círculos: mismo ancho y alto + border-radius del 50% */
     width: 45px;
     height: 45px;
-    border-radius: 50%; 
+    border-radius: 50%;
 
     /* Fondo y borde inicial (puedes usar tus variables del :root) */
-    background-color: #ffffff; 
+    background-color: #ffffff;
     border: 1px solid var(--color-borde, #e0e0e0);
 
     /* Animación suave para cuando pases el mouse */

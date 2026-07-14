@@ -1,10 +1,12 @@
+import styles from "../cart/CartItem.module.css";
+
 import { useCart } from "../../../context/CartContext";
 
 //                { item: { nombre: "Zapatos", precio: 50, quantity: 2, imagen: "..." } }
 function CartItem({ item }) {
     
     // Obtenemos funciones del contexto para actualizar o eliminar productos
-    const { addToCart, removeFromCart } = useCart();
+    const { addToCart, decreaseFromCart, removeFromCart } = useCart();
 
     // Maneja el aumento de cantidad (+)
     const handleIncrease = () => {
@@ -16,7 +18,7 @@ function CartItem({ item }) {
     const handleDecrease = () => {
         if (item.quantity > 1) {
             // 👇 Resta 1 si hay más de 1
-            removeFromCart(item.id);
+            decreaseFromCart(item.id);
         } else {
             // 👇 Si queda 1 y se presiona –, elimina el producto del carrito
             removeFromCart(item.id)
@@ -24,33 +26,43 @@ function CartItem({ item }) {
     };
 
     return (
-        <li>
-            {/* Imagen pequeña */}
-            <img
+        <div className={styles.cartItemContainer}>
+            {/* 1. Imagen del producto */}
+            <img className={styles.cartItemImg}
                 src={item.imagen}
                 alt={item.nombre}
-                style={{ width: "50px", height: "50px", objectFit: "cover" }} 
             />
-            <br />
-            {/* Nombre y precio unitario */}
-            {item.nombre} - ${item.precio}
-            <br />
+            
+            {/* 2. Nombre y precio unitario */}
+            <div className={styles.cartItemDetails}>
+                <span className={styles.productName}>{item.nombre}</span>
+                <span className={styles.productPrice}>${item.precio}</span>
+            </div>
+            
 
             {/* Cantidad actual con botones para modificar */}
-            <button
-                onClick={handleDecrease}
-                disabled={item.quantity <= 0}   // 👈 deshabilita si ya está en 0
-            >-</button>
-            <span>{item.quantity}</span>
-            <button 
-                onClick={handleIncrease}
-                disabled={item.quantity >= item.stock} // 👈 deshabilita si llegó al stock
-            >+</button>
-            <br />
-
+            <div className={styles.quantityControls}>
+                <button
+                    className={styles.decreaseBtn}
+                    onClick={handleDecrease}
+                    disabled={item.quantity <= 0}   // 👈 deshabilita si ya está en 0
+                > -
+                </button>
+                <span className={styles.cartItemQuantity}>{item.quantity}</span>
+                <button
+                    className={styles.increaseBtn}
+                    onClick={handleIncrease}
+                    disabled={item.quantity >= item.stock} // 👈 deshabilita si llegó al stock
+                > +
+                </button>
+            </div>
+            
             {/* Subtotal por producto */}
-            Subtotal: ${item.precio * item.quantity}
-        </li>
+            <div className={styles.cartItemSubtotal}>
+                Subtotal: ${item.precio * item.quantity}
+            </div>
+            
+        </div>
     );
 }
 

@@ -1,0 +1,46 @@
+.cartStyle {
+    max-width: 40rem;
+    margin: 3rem auto;
+    padding: 1.5rem;
+    border: 1.5px solid var(--color-border-card);
+    border-radius: 8px;
+    background: var(--color-fondo-card); /* Fondo suave */
+}
+
+.cartList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.cartBtn {
+    display: block;
+    margin: 20px auto;    /* auto en los lados lo centra horizontalmente */
+    width: 80%;
+    padding: 0.75rem;
+    background-color: var(--color-btn);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cartBtn:hover {
+
+    background-color: var(--color-btn-hover);
+}
+
+/* Responsive: carrito ocupa todo el ancho en móviles */
+@media (max-width: 600px) {
+    .cartStyle {
+        max-width: 100%;
+        margin: 1rem;
+        padding: 1rem;
+    }
+}
+
+

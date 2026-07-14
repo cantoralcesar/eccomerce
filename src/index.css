@@ -6,14 +6,15 @@
     --color-principal: #3498db;      /* Azul para botones principales o enlaces */
     --color-secundario: #2ecc71;     /* Verde para precio, éxito o el botón de comprar */
     --color-fondo-oscuro: #2c3e50;   /* Gris oscuro para el Header o Footer */
+    --color-nav-footer: linear-gradient(to right, #00093c, #2d0b00);
     
     --color-texto: #333333;          /* Negro suave para los textos */
     --color-fondo-claro: #f9f9f9;    /* Gris muy claro para el fondo de la web */
-    --color-border-input: #e0e0e0;          /* Gris claro para los bordes de los imput */
+    --color-border-input: #e0e0e0;   /* Gris claro para los bordes de los imput */
     --color-btn: #111;               /* Color negro botones */
-    --color-btn-hover: #222;               /* Color negro botones */
-    --color-border-card: #e5e7eb;    /* Color bordeS de Card */
-    --color-fondo-card: #fafafa;
+    --color-btn-hover: #222;          /* Color negro botones */
+    --color-border-card: #e5e7eb;    /* Color bordes de Card */
+    --color-fondo-card: #fafafa;     /* Color fondo de card*/
 
     /* Puedes agregar fuentes o sombras si quieres */
     --sombra-tarjeta: 0 4px 6px rgba(0, 0, 0, 0.05);

@@ -1,0 +1,23 @@
+.heroSection {
+    color:red;
+}
+
+.heroContainer {
+    color: blue;
+}
+
+.heroSubtitle {
+    color: green;
+}
+
+.heroTitle {
+    color: yellow;
+}
+
+.heroDescription {
+    color: aqua;
+}
+
+.heroBtn {
+    border: none;
+}

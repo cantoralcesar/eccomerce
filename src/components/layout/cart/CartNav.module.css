@@ -2,9 +2,8 @@
 .nav {
     display: flex;
     justify-content: space-between;
-    background-color: #f8f9fa;
+    background-color: var(--color-nav-footer);
     padding: 10px 20px;
-    border: 2px solid green;
 }
 
 .menu {
@@ -14,19 +13,17 @@
     align-items: center;
     gap: 50px;
     padding: 0;
-    border: 1px solid red;
 }
 
 .menu li a {
     text-decoration: none;
-    color: #333;  /*inherit*/
+    color: #fff;  /*inherit*/
     text-transform: uppercase;
     letter-spacing: 2px;
-    border: 1px solid mediumslateblue;
 }
 
 .menu li a:hover {
-    color: #007bff;
+    color: #e11d48;
 }
 
 .cartIcon {
