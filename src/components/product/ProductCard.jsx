@@ -31,7 +31,7 @@ function ProductCard({ id, image, name, price, stock }) {
             <h3 className={styles.name}>{name}</h3>
             <p className={styles.price}>Precio: ${price}</p>
             
-            <p className={styles.stock}>Stock disponible: {stock}</p>
+            <p className={styles.stock}>Disponible: {stock}</p>
             
             <p><Link to={`/products/${id}`}>Ver más info</Link></p>
             <div>

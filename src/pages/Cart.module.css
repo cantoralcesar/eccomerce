@@ -16,22 +16,34 @@
     margin: 20px 0;
 }
 
-.cartBtn {
+.cartBtn, .cartBtnReturn {
     display: block;
     margin: 20px auto;    /* auto en los lados lo centra horizontalmente */
-    width: 80%;
+    width: 70%;
     padding: 0.75rem;
-    background-color: var(--color-btn);
-    color: white;
-    border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.2s;
 }
 
-.cartBtn:hover {
+.cartBtn {
+    background-color: var(--color-btn);
+    color: white;
+    border: none;
+}
 
+.cartBtn:hover {
     background-color: var(--color-btn-hover);
+}
+
+.cartBtnReturn {
+    background: var(--color-fondo-claro);
+    color: var(--color-btn);
+    border: 1px solid var(--color-btn);
+}
+
+.cartBtnReturn:hover {
+    background-color: var(--color-border-input);
 }
 
 /* Responsive: carrito ocupa todo el ancho en móviles */

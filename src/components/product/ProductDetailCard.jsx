@@ -35,7 +35,7 @@ function ProductDetailCard({ product }) {
         <h2 className={styles.title}>{product.nombre}</h2>
         <p className={styles.details}>{product.detalles}</p>
         <p><strong>Precio:</strong> ${product.precio}</p>
-        <p><strong>Stock:</strong> {product.stock > 0 ? product.stock : "Agotado"}</p>
+        <p><strong>Disponible:</strong> {product.stock > 0 ? product.stock : "Agotado"}</p>
         
         {/* Aquí usamos Count y le pasamos la prop onChange */}
         <Count onChange={handleQuantityChange} max={product.stock}/>
