@@ -30,7 +30,7 @@ function Contact() {
     return (
         <div>
             <h2>Contacto</h2>
-            <p>Esta es la página de Contacto de prueba</p>
+            <p>Esta es la página de Contacto</p>
         
             {/* Colocamos el componente aqui para que se visualice*/}
             <ContactForm

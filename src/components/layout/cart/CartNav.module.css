@@ -1,46 +1,46 @@
 
-.nav {
+.cartNav {
     display: flex;
     justify-content: space-between;
     background-color: var(--color-nav-footer);
-    padding: 10px 20px;
 }
 
-.menu {
+.cartNav .cartNavMenu {
     display: flex;
     list-style: none;
     justify-content: center;
     align-items: center;
     gap: 50px;
-    padding: 0;
 }
 
-.menu li a {
+.cartNavMenu .cartLink {
     text-decoration: none;
     color: #fff;  /*inherit*/
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-.menu li a:hover {
-    color: #e11d48;
+.cartNavMenu .cartIcon:hover {
+    transform: translateY(-4px);
 }
 
-.cartIcon {
-    position: relative;
-    display: inline-block;
+
+.cartNavMenu .cartIcon {
+    position: relative;   /* para que el miniCart se posicione respecto a este */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px;
     height: 40px;
 }
 
-.cartIcon img {
+.cartNavMenu .cartIcon .cartIconImg {
     height: 100%;
     width: 100%;
-    fill: purple;
 }
 
 
-.cartIcon span {
+.cartBadge {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,4 +54,37 @@
     transform: translate(-30%, -50%);
     font-size: 14px;
     color: white;
+}
+
+/* ============================================ */
+/*          MiniCart oculto por defecto         */
+/* ============================================ */
+
+.miniCart {
+    position: absolute;
+    top: 100%;          /* debajo del icono */
+    right: 0;
+    width: 250px;
+    max-height: 200px;
+    border: 1px solid var(--color-border-card);
+    border-radius: 8px;
+    background: white;
+    color: black;
+    padding: 10px;
+    z-index: 10;
+    overflow-y: auto;   /* agrega scroll vertical */
+
+    /*display: none;       oculto por defecto */
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Mostrar MiniCart al hacer hover en el icono */
+.cartIcon:hover .miniCart {
+    /*display: block;*/
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
