@@ -4,7 +4,7 @@ import ProductCard from "../components/product/ProductCard";
 import styles from "../pages/Products.module.css";
 
 // Importaciones clave de Firebase
-import { collection, getDocs } from "firebase/firestore";
+import { collection, onSnapshot} from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
 
 function Products() {
@@ -37,31 +37,36 @@ function Products() {
     }, [])  // Array vacio para que solo se ejecute una vez al entrar a la página
 
     
-
     **/
 
     useEffect(() => {
-            const prodBD = collection(db, "productos")
-    
-            getDocs(prodBD)
-            .then((resp) => {
+        const prodBD = collection(db, "productos");
+
+        // Suscripción en tiempo real
+        const unsubscribe = onSnapshot(
+            prodBD,
+            (snapshot) => {
                 setlistProducts(
-                    resp.docs.map((doc) => {
-                        return { ...doc.data(),
-                                    docId: doc.id} // opcional: el id automático de Firestore
-                    })
+                    snapshot.docs.map((doc) => ({
+                        ...doc.data(),
+                        docId: doc.id, // id automático de Firestore
+                    }))
                 );
                 setLoading(false);
-            })
-            .catch((err) => {
+            },
+            (err) => {
                 setError(err.message);
                 setLoading(false);
-            });
-        }, []);
+            }
+        );
 
-        if (loading) return <div>Cargando Productos</div>
+        // Limpieza: cancelar suscripción al desmontar el componente
+        return () => unsubscribe();
+    }, []);
 
-        if (error) return <div>Error: {error}</div>
+    if (loading) return <div>Cargando Productos...</div>
+
+    if (error) return <div>Error: {error}</div>
 
     return (
         <div>
@@ -74,8 +79,8 @@ function Products() {
                     // 4. El mapeo que renderiza cada tarjeta individual
                     <ProductCard
 
-                        key={prod.id}
-                        id={prod.id}   // 👈 aquí pasas el id
+                        key={prod.docId}     // usa el id único de Firestore
+                        id={prod.id}         // tu id de negocio (ej. 1, 2, 3...)
                         image={prod.imagen}  // Pasamos 'imagen' del JSON a la prop 'image'
                         name={prod.nombre}   // Pasamos 'nombre' del JSON a la prop 'name'
                         price={prod.precio}  // Pasamos 'precio' del JSON a la prop 'price'

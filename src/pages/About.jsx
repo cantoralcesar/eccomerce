@@ -2,11 +2,18 @@ import { useState, useEffect } from "react";
 import AboutCard from "../components/about/AboutCard"; // Tu componente de la lista
 //import styles from "../pages/About.module.css";  Si usas estilos para la página
 
+// Importaciones clave de Firebase
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/firebaseConfig";
+
 function About() {
     // 1. Los tres estados
     const [team, setTeam] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    
+
+    /*
 
     // 2. El useEffect con la lógica de carga y manejo de errores profesional
     useEffect(() => {
@@ -30,6 +37,29 @@ function About() {
 
         fetchTeam();
     }, []);
+    
+
+    */
+
+    useEffect(() => {
+            const equiptmentBD = collection(db, "equipo")
+    
+            getDocs(equiptmentBD)
+            .then((resp) => {
+                setTeam(
+                    resp.docs.map((doc) => {
+                        return { ...doc.data(),
+                                    docId: doc.id} // opcional: el id automático de Firestore
+                    })
+                );
+                setLoading(false);
+            })
+            .catch((err) => {
+                setError(err.message);
+                setLoading(false);
+            });
+        }, []);
+
 
     // 3. Experiencia de usuario - Renderizado condicional
     if (loading) return <div>Cargando equipo...</div>;
@@ -43,7 +73,7 @@ function About() {
                 {/* Le pasamos la lista limpia al AboutCard.jsx para que la mapee */}
                 {/* Aquí se esta pasando la lista entera a una sola tarjeta en CSS*/}
                 <AboutCard teamList={team} />
-        </div>
+            </div>
         </div>
         
     );

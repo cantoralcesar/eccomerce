@@ -7,7 +7,11 @@ function AboutCard({ teamList }) {
             {/* ¡Aquí es donde se hace el mapeo en este escenario! */}
             {teamList.map((members) => (
                 <div key={members.id} className={styles.memberCard}>
-                    <img src={members.foto} alt={members.nombre} />
+                    <img
+                        src={members.foto}
+                        alt={members.nombre}
+                        loading= "lazy"
+                    />
                     <h3>{members.nombre}</h3>
                     <p>{members.puesto}</p>
                     <p>{members.email}</p>
