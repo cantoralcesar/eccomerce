@@ -21,6 +21,9 @@ function Nav() {
                 <li><Link to="/about">Nosotros</Link></li>
                 <li><Link to="/products">Productos</Link></li>
                 <li><Link to="/contact">Contacto</Link></li>
+                {/*            componente ProductBD                 */}
+                {/* <li><Link to="/productBD">ProductBD</Link></li> */}
+                
             </ul>
         </nav>
         

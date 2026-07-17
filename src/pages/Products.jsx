@@ -3,12 +3,18 @@ import { useState, useEffect } from "react";
 import ProductCard from "../components/product/ProductCard";
 import styles from "../pages/Products.module.css";
 
+// Importaciones clave de Firebase
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/firebaseConfig";
+
 function Products() {
     // 1. El estado para guardar los 10 productos locales
     const [listProducts, setlistProducts] = useState([]);
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    /**
 
     // 2. El useEffect que hace el fetch a la carpeta public
     useEffect(
@@ -30,9 +36,32 @@ function Products() {
         });
     }, [])  // Array vacio para que solo se ejecute una vez al entrar a la página
 
-    if (loading) return <div>Cargando Productos</div>
+    
 
-    if (error) return <div>Error: {error}</div>
+    **/
+
+    useEffect(() => {
+            const prodBD = collection(db, "productos")
+    
+            getDocs(prodBD)
+            .then((resp) => {
+                setlistProducts(
+                    resp.docs.map((doc) => {
+                        return { ...doc.data(),
+                                    docId: doc.id} // opcional: el id automático de Firestore
+                    })
+                );
+                setLoading(false);
+            })
+            .catch((err) => {
+                setError(err.message);
+                setLoading(false);
+            });
+        }, []);
+
+        if (loading) return <div>Cargando Productos</div>
+
+        if (error) return <div>Error: {error}</div>
 
     return (
         <div>

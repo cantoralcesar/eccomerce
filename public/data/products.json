@@ -5,7 +5,9 @@
         "precio": 89.99,
         "stock": 15,
         "imagen": "/images/products/auriculares.avif",
-        "detalles": "Auriculares inalámbricos con sonido envolvente, batería de larga duración y diseño ergonómico para uso prolongado."
+        "detalles": "Auriculares inalámbricos con sonido envolvente, batería de larga duración y diseño ergonómico para uso prolongado.",
+        "destacado": true,
+        "categoria": "Auriculares"
     },
     {
         "id": 2,
@@ -13,15 +15,19 @@
         "precio": 120.0,
         "stock": 8,
         "imagen": "/images/products/teclado.avif",
-        "detalles": "Teclado mecánico con retroiluminación RGB personalizable, switches duraderos y diseño gamer."
+        "detalles": "Teclado mecánico con retroiluminación RGB personalizable, switches duraderos y diseño gamer.",
+        "destacado": true,
+        "categoria": "Teclados"
     },
     {
         "id": 3,
         "nombre": "Ratón Gamer Ergonómico",
         "precio": 45.5,
-        "stock": 22,
+        "stock": 16,
         "imagen": "/images/products/mouse.avif",
-        "detalles": "Ratón ergonómico con alta precisión, botones programables y diseño cómodo para largas sesiones de juego."
+        "detalles": "Ratón ergonómico con alta precisión, botones programables y diseño cómodo para largas sesiones de juego.",
+        "destacado": true,
+        "categoria": "Mouses"
     },
     {
         "id": 4,
@@ -29,7 +35,9 @@
         "precio": 199.99,
         "stock": 5,
         "imagen": "/images/products/monitor.avif",
-        "detalles": "Monitor de 24 pulgadas Full HD con tasa de refresco rápida y colores vibrantes, ideal para gaming."
+        "detalles": "Monitor de 24 pulgadas Full HD con tasa de refresco rápida y colores vibrantes, ideal para gaming.",
+        "destacado": true,
+        "categoria": "Monitores"
     },
     {
         "id": 5,
@@ -37,15 +45,19 @@
         "precio": 75.0,
         "stock": 0,
         "imagen": "/images/products/smart.avif",
-        "detalles": "Reloj inteligente con funciones deportivas, monitoreo de salud y resistencia al agua."
+        "detalles": "Reloj inteligente con funciones deportivas, monitoreo de salud y resistencia al agua.",
+        "destacado": true,
+        "categoria": "Smartwatches"
     },
     {
         "id": 6,
         "nombre": "Mochila para Laptop Impermeable",
         "precio": 39.99,
-        "stock": 30,
+        "stock": 20,
         "imagen": "/images/products/mochila.avif",
-        "detalles": "Mochila resistente al agua con compartimento acolchado para laptop y múltiples bolsillos organizadores."
+        "detalles": "Mochila resistente al agua con compartimento acolchado para laptop y múltiples bolsillos organizadores.",
+        "destacado": false,
+        "categoria": "Mochilas"
     },
     {
         "id": 7,
@@ -53,7 +65,9 @@
         "precio": 25.8,
         "stock": 12,
         "imagen": "/images/products/lampara.avif",
-        "detalles": "Lámpara LED ajustable con diferentes niveles de brillo y diseño moderno para oficina o estudio."
+        "detalles": "Lámpara LED ajustable con diferentes niveles de brillo y diseño moderno para oficina o estudio.",
+        "destacado": false,
+        "categoria": "Lámparas"
     },
     {
         "id": 8,
@@ -61,7 +75,9 @@
         "precio": 249.0,
         "stock": 4,
         "imagen": "/images/products/silla.avif",
-        "detalles": "Silla ergonómica con soporte lumbar, ajuste de altura y materiales transpirables para mayor comodidad."
+        "detalles": "Silla ergonómica con soporte lumbar, ajuste de altura y materiales transpirables para mayor comodidad.",
+        "destacado": true,
+        "categoria": "Sillas"
     },
     {
         "id": 9,
@@ -69,7 +85,9 @@
         "precio": 34.5,
         "stock": 18,
         "imagen": "/images/products/cargador.webp",
-        "detalles": "Powerbank de gran capacidad con carga rápida y múltiples puertos USB para dispositivos móviles."
+        "detalles": "Powerbank de gran capacidad con carga rápida y múltiples puertos USB para dispositivos móviles.",
+        "destacado": true,
+        "categoria": "Cargadores"
     },
     {
         "id": 10,
@@ -77,6 +95,8 @@
         "precio": 59.99,
         "stock": 7,
         "imagen": "/images/products/camara.webp",
-        "detalles": "Cámara web con resolución Full HD, micrófono integrado y compatibilidad con videollamadas en PC y laptop."
+        "detalles": "Cámara web con resolución Full HD, micrófono integrado y compatibilidad con videollamadas en PC y laptop.",
+        "destacado": false,
+        "categoria": "Cámaras"
     }
 ]
