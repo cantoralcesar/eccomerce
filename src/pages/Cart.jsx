@@ -59,17 +59,18 @@ function Cart(){
                 
                         {/* Totales calculados con funciones del contexto */}
                         <h3>Total productos: {getCartQuantity()}</h3>
-                        <h3>Total a pagar: ${getCartTotal()}</h3>
+                        <h3>Total a pagar: ${getCartTotal().toFixed(2)}</h3>
 
                         {/* Botón para vaciar todo el carrito */}
                         <button className={styles.cartBtn}
+                            /* clearCart  ->  CartContext.jsx */
                             onClick={clearCart}>Vaciar carrito
                         </button>
                         <Link to="/">
                             <button 
                                 className={styles.cartBtnReturn}
                                 onClick={handleFinalizarCompra}>
-                                    Finalizar Compra
+                                    Continuar compra
                             </button>
                         </Link>
                     </>

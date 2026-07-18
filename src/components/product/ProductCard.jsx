@@ -38,7 +38,7 @@ function ProductCard({ id, image, name, price, stock }) {
             
             <p className={styles.stock}>Disponible: {stock}</p>
             
-            <p><Link to={`/products/${id}`}>Ver más info</Link></p>
+            <p><Link to={`/products/${id}`}>Ver detalle</Link></p>
             <div>
                 <button
                     className={styles.addButton}

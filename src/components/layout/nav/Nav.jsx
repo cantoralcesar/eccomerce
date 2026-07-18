@@ -23,6 +23,8 @@ function Nav() {
                 <li><Link to="/contact">Contacto</Link></li>
                 {/*            componente ProductBD                 */}
                 {/* <li><Link to="/productBD">ProductBD</Link></li> */}
+
+                <li><Link to="/register-product">Ingresar productos</Link></li>
                 
             </ul>
         </nav>

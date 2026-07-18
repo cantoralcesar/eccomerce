@@ -7,11 +7,7 @@
 .container-main {
   
   max-width: 1200px; /* Limita el ancho para que la tienda no se estire infinito en pantallas grandes */
-  width: 100%;
+ 
   margin: 100px auto 0 auto; /* deja espacio arriba para el header fijo */
   padding: 0 2rem;
-
-  min-height: 50vh;        /* Ocupa como mínimo el 100% del alto de la pantalla actual */
-  min-height: 50dvh;       /* Alternativa moderna para navegadores móviles (evita barras del navegador) */
-  
 }

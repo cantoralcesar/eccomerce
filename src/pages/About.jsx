@@ -42,26 +42,29 @@ function About() {
     */
 
     useEffect(() => {
-            const equiptmentBD = collection(db, "equipo")
-    
-            getDocs(equiptmentBD)
-            .then((resp) => {
-                setTeam(
-                    resp.docs.map((doc) => {
-                        return { ...doc.data(),
-                                    docId: doc.id} // opcional: el id automático de Firestore
-                    })
-                );
-                setLoading(false);
-            })
-            .catch((err) => {
-                setError(err.message);
-                setLoading(false);
-            });
-        }, []);
+        // 1. Referencia a la colección "equipo" en Firestore
+        const equiptmentBD = collection(db, "equipo")
+        
+        // 2. Traemos los documentos con getDocs (consulta única, no en tiempo real)
+        getDocs(equiptmentBD)
+        .then((resp) => {
+            // 3. Mapeamos cada documento y le añadimos docId (id único de Firestore)
+            setTeam(
+                resp.docs.map((doc) => {
+                    return { ...doc.data(),
+                                docId: doc.id} // opcional: el id automático de Firestore
+                })
+            );
+            setLoading(false);
+        })
+        .catch((err) => {
+            setError(err.message);
+            setLoading(false);
+        });
+    }, []);
 
 
-    // 3. Experiencia de usuario - Renderizado condicional
+    // 3. Experiencia de usuario - Renderizado condicional según estado
     if (loading) return <div>Cargando equipo...</div>;
     if (error) return <div>Hubo un error visible: {error}</div>;
 

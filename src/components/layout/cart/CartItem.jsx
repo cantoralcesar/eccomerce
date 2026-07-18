@@ -1,3 +1,5 @@
+
+
 import styles from "../cart/CartItem.module.css";
 
 import { useCart } from "../../../context/CartContext";
@@ -60,6 +62,9 @@ function CartItem({ item }) {
             {/* Subtotal por producto */}
             <div className={styles.cartItemSubtotal}>
                 Subtotal: ${item.precio * item.quantity}
+            </div>
+            <div>
+                ghj
             </div>
             
         </div>

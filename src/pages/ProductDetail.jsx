@@ -1,6 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 
+//import { doc, getDoc } from "firebase/firestore";
+import { collection, query, where, getDocs } from "firebase/firestore";
+
+import { db } from "../firebase/firebaseConfig"; // ajusta la ruta según tu proyecto
+
 import ProductDetailCard from '../components/product/ProductDetailCard';
 
 const ProductDetail = () => {
@@ -11,6 +16,7 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    /*
     setLoading(true);
     fetch("/data/products.json")
       .then((res) => {
@@ -35,6 +41,36 @@ const ProductDetail = () => {
         setError("No se pudo cargar el archivo de productos");
       })
       .finally(() => setLoading(false));
+      */
+
+      const fetchProduct = async () => {
+          setLoading(true);
+              try {
+                  // 🔎 Traer un documento específico por ID
+                  /*
+                  const docRef = doc(db, "productos", id);
+                  const docSnap = await getDoc(docRef);
+                  */
+
+                  // 👇 Buscar por campo "id" dentro de la colección
+                  const q = query(collection(db, "productos"), where("id", "==",parseInt(id)));
+                  const querySnapshot = await getDocs(q);
+
+                  if (!querySnapshot.empty) {
+                      const docSnap = querySnapshot.docs[0];
+                      setProduct({ id: docSnap.id, ...docSnap.data() });
+                  } else {
+                      setError("Producto no encontrado");
+                  }
+              } catch (err) {
+              console.error("Error cargando producto:", err);
+              setError("No se pudo cargar el producto desde Firebase");
+              } finally {
+              setLoading(false);
+              }
+    };
+
+    fetchProduct();
   }, [id]);
 
   if (loading) {
