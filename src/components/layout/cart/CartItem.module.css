@@ -65,6 +65,40 @@
     background-color: var(--color-btn-hover);
 }
 
+/* Estilos del Botón contenedor del icono */
+.deleteProductBtn {
+    background: none;             /* Fondo transparente */
+    border: none;                 /* Sin borde */
+    padding: 10px;                /* Área de clic cómoda */
+    cursor: pointer;              /* Cambia el cursor a mano */
+    display: flex;                /* Centra el icono dentro */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos del Icono de la papelera en estado normal */
+.trashIcon {
+    color: #6c757d;            /* Un gris suave por defecto */
+    font-size: 1.2rem;           /* Ajusta el tamaño del icono */
+    transition: color 0.3s ease; /* Transición suave de 0.3s para el cambio de color */
+}
+
+/* --- EFECTO HOVER --- */
+
+/* Cuando pasas el mouse sobre el BOTÓN (.deleteProductBtn) */
+.deleteProductBtn:hover {
+  background-color: #f8d7da; /* Opcional: Un fondo rojo muy pálido */
+}
+
+/* Y... cuando pasas el mouse sobre el BOTÓN, apuntamos al ICONO (.trashIcon) */
+.deleteProductBtn:hover .trashIcon {
+  color: #dc3545;          /* Cambia el icono a ROJO intenso */
+}
+
+
+
 /* Responsive: en móviles, cada ítem se apila */
 @media (max-width: 600px) {
     .cartItemContainer {

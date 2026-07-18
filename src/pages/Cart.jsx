@@ -8,6 +8,8 @@ import CartItem from "../components/layout/cart/CartItem";
 
 import { toast } from "react-toastify"
 
+import Swal from "sweetalert2";
+
 function Cart(){
 
     // Obtenemos del contexto: el carrito, funciones para limpiar y calcular totales
@@ -64,10 +66,28 @@ function Cart(){
                         {/* Botón para vaciar todo el carrito */}
                         <button className={styles.cartBtn}
                             /* clearCart  ->  CartContext.jsx */
-                            onClick={clearCart}>Vaciar carrito
+                            onClick={() => {
+                                Swal.fire({
+                                    title:  "¿Vaciar carrito?",
+                                    text: "Se eliminarán todos los productos",
+                                    icon: "warning",
+                                    showCancelButton: true,
+                                    confirmButtonColor: "#d33",
+                                    cancelButtonColor: "#3085d6",
+                                    confirmButtonText: "Sí, vaciar",
+                                    cancelButtonText: "Cancelar"
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        clearCart();
+                                        Swal.fire("Carrito vacío", "Todos los productos fueron eliminados.", "success");
+                                    }
+                                });
+                            }}
+                            >
+                            Vaciar carrito
                         </button>
                         <Link to="/">
-                            <button 
+                            <button
                                 className={styles.cartBtnReturn}
                                 onClick={handleFinalizarCompra}>
                                     Continuar compra
