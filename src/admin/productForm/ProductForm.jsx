@@ -87,7 +87,7 @@ function ProductForm({ formData, handleChange, handleShipment, handleChangeImage
             <button
                 type="submit"
                 disabled={loading}
-                className={styles.addButton}
+                className={styles.addBtnProduct}
                 >{
                     loading ? "Subiendo imagen": "Guardar Producto"
                 }

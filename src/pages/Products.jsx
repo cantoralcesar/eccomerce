@@ -50,6 +50,7 @@ function Products() {
                     snapshot.docs.map((doc) => ({
                         ...doc.data(),
                         docId: doc.id, // id automático de Firestore
+                        
                     }))
                 );
                 setLoading(false);
