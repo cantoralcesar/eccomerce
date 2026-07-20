@@ -1,5 +1,5 @@
 
-.formStyle {
+.contactForm {
 
     display: flex;
     flex-direction: column;
@@ -13,25 +13,25 @@
     background: var(--color-fondo-card); /* Fondo suave */
 }
 
-.formStyle h3 {
+.contactForm h3 {
     margin: 0 0 8px 0;
     color: var(--color-texto);
     font-size: 1.25rem;
 }
 
-.formStyle div {
+.contactForm div {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.formStyle label {
+.contactForm label {
     min-width: 140px;
     font-weight: 500;
     color: #444;
 }
 
-.formStyle input {
+.contactForm input {
     flex: 1;
     padding: 6px 10px;
     border: 1px solid var(--color-border-input);
@@ -62,24 +62,24 @@
 
 /* Tablets y móviles grandes */
 @media (max-width: 768px) {
-    .formStyle {
+    .contactForm {
         margin: 1.5rem auto;
         padding: 1rem;
         max-width: 90%;
     }
 
-    .formStyle div {
+    .contactForm div {
         flex-direction: column;   /* Label arriba, input abajo */
         align-items: flex-start;  /* Alineados a la izquierda */
         gap: 4px;
     }
 
-    .formStyle label {
+    .contactForm label {
         min-width: auto;          /* Quita el ancho fijo */
         font-size: 0.9rem;
     }
 
-    .formStyle input {
+    .contactForm input {
         width: 100%;              /* Input ocupa todo el ancho */
         padding: 10px;
         font-size: 1rem;          /* Evita zoom en iOS */
@@ -93,13 +93,13 @@
 
 /* Móviles pequeños */
 @media (max-width: 480px) {
-    .formStyle {
+    .contactForm {
         margin: 0.5rem auto;
         padding: 0.75rem;
         border-radius: 0;         /* Opcional: bordes planos en móvil */
     }
 
-    .formStyle h3 {
+    .contactForm h3 {
         font-size: 1.1rem;
     }
 

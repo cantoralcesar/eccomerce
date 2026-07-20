@@ -1,6 +1,7 @@
+// JSX de prueba
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../firebase/firebaseConfig";
+import { db } from "../../firebase/firebaseConfig";
 
 function AddProduct() {
   const [nombre, setNombre] = useState("");

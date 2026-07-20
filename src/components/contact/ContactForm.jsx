@@ -5,7 +5,7 @@ function ContactForm({ datosForm, manejarCambio, manejarEnvio }) {
 
 
     return (
-        <form className={styles.formStyle} onSubmit={manejarEnvio}>
+        <form className={styles.contactForm} onSubmit={manejarEnvio}>
             <h3>Agregar Nuevo Producto</h3>
             <div>
                 <label>Nombre del Producto:</label>

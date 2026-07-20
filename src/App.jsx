@@ -10,12 +10,12 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart"; // 👈 importa tu Cart.jsx
 import Login from "./components/auth/Login";
 
-import ProductFormContainer from "./admin/ProductFormContainer";
+import ProductFormContainer from "./admin/productForm/ProductFormContainer";
 
 //import ProductBD from "./components/productBD/ProductBD";
 
-// 👇 Importar el CartProvider
-import { CartProvider } from "./context/CartContext";
+import ManagerAgregar from "./admin/manager/ManagerAgregar";
+
 
 // Toast para los mensajes
 import { ToastContainer } from "react-toastify";
@@ -23,7 +23,7 @@ import { ToastContainer } from "react-toastify";
 function App() {
   return (
     // 👇 Envolver todo con CartProvider
-    <CartProvider>
+    <>
       <Routes>
         {" "}
         {/* Envuelve a las demás para mostrar Header y Footer siempre */}
@@ -35,8 +35,12 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetail />} />
           <Route path="/contact" element={<Contact />} />
+          
           <Route path="/register-product" element={<ProductFormContainer />} />
+
+          <Route path="/manager-agregar" element={<ManagerAgregar />} />
           {/* <Route path="/productBD" element={<ProductBD/>} /> */}
+          
           <Route path="/login" element={<Login />} />
           <Route path="/cart" element={<Cart />} />{" "}
           {/* 👈 aquí agregas la ruta */}
@@ -54,7 +58,7 @@ function App() {
         draggable // se puede arrastrar
         theme="colored" // estilo colorido (verde/rojo)
       />
-    </CartProvider>
+    </>
   );
 }
 

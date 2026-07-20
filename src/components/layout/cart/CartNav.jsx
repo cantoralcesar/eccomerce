@@ -1,9 +1,8 @@
-import { useCart } from '../../../context/CartContext';
-
 import { Link } from 'react-router-dom';
 
-import styles from "./CartNav.module.css";
+import { useCart } from '../../../context/CartContext';
 
+import styles from "./CartNav.module.css";
 import cartIcon from "../../../assets/icons/cart-icon.svg";
 
 import MiniCart from './MiniCart';    // 👈 importamos

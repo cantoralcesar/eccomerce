@@ -1,4 +1,25 @@
-function LoginForm() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function LoginForm() {
     return (
     <form >
       <label>
@@ -6,7 +27,6 @@ function LoginForm() {
         <input
           type="email"
 
-         
         />
       </label>
       <label>
@@ -23,3 +43,4 @@ function LoginForm() {
 }
 
 export default LoginForm;
+*/
