@@ -1,3 +1,8 @@
+.vacioContainer {
+
+    min-height: calc(100vh - 500px); /* ocupa todo el espacio entre header y footer */
+}
+
 .cartStyle {
     max-width: 40rem;
     height: auto;
@@ -47,6 +52,7 @@
 .cartBtnReturn:hover {
     background-color: var(--color-border-input);
 }
+
 
 /* Responsive: carrito ocupa todo el ancho en móviles */
 @media (max-width: 600px) {

@@ -39,13 +39,16 @@ function Cart(){
             
                 {/* Si el carrito está vacío mostramos un mensaje */}
                 {cartItems.length === 0 ? (
-                    <div>
+                    <div className={styles.vacioContainer}>
+                        <div className={styles.vacio}>
                         <p>No hay productos en el carrito.</p>
                         <p>Agrega productos para continuar la compra</p>
                         <Link to="/products">
                             <button className={styles.cartBtn}> Ver Productos</button>
                         </Link>
                     </div>
+                    </div>
+                    
                 
                     ) : (
                     <>
@@ -73,7 +76,7 @@ function Cart(){
                                     icon: "warning",
                                     showCancelButton: true,
                                     confirmButtonColor: "#d33",
-                                    cancelButtonColor: "#3085d6",
+                                    cancelButtonColor: "var(--color-btn)",
                                     confirmButtonText: "Sí, vaciar",
                                     cancelButtonText: "Cancelar"
                                 }).then((result) => {

@@ -74,7 +74,7 @@ function ProductFormContainer() {
               imagen: dataImgbb.data.url
             };
 
-            // Por el momento hacemos un console.log
+            // LÓGICA PARA SUBIR DATOS A FIRESTORE
             console.log('Enviando producto a Firebase', productComplete);
 
             // Obtenemos la instancia de la base de datos
@@ -101,8 +101,8 @@ function ProductFormContainer() {
     
     return (
       <div>
-        <h2>Registro de productos</h2>
-        <p>Esta es la página de Registros</p>
+        {/*<h2>Registro de productos</h2>
+        <p>Esta es la página de Registros</p>*/}
 
         {/* Colocamos el componente aqui para que se visualice ProductForm*/}
         <ProductForm

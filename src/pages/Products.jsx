@@ -65,7 +65,7 @@ function Products() {
         return () => unsubscribe();
     }, []);
 
-    if (loading) return <div>Cargando Productos...</div>
+    if (loading) return <div>Cargando Producto...</div>
 
     if (error) return <div>Error: {error}</div>
 
@@ -81,9 +81,10 @@ function Products() {
                     <ProductCard
 
                         key={prod.docId}        // usa el id único de Firestore
-                        id={prod.id}         // tu id de negocio (ej. 1, 2, 3...)
+                        //id={prod.id}         // tu id de negocio (ej. 1, 2, 3...)
                         // id={prod.docId}         // id de  firestore XyZ123abc...
-
+                        id={prod.id || prod.docId} // 👈 si existe id manual, úsalo; si no, usa docId
+                        
                         image={prod.imagen}     // Pasamos 'imagen' a la prop 'image'
                         name={prod.nombre}      // Pasamos 'nombre' a la prop 'name'
                         price={prod.precio}     // Pasamos 'precio'  a la prop 'price'

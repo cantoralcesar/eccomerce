@@ -1,13 +1,13 @@
-.app-container {  /*No se utiliza*/
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Fuerza a que el footer se vaya abajo si hay poco contenido */
-}
 
-.container-main {
-  
+
+.layout-main {
+  flex: 1;                  /* 👈 empuja el footer hacia abajo */
   max-width: 1200px; /* Limita el ancho para que la tienda no se estire infinito en pantallas grandes */
- 
   margin: 100px auto 0 auto; /* deja espacio arriba para el header fijo */
   padding: 0 2rem;
 }
+
+
+
+
+

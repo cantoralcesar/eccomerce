@@ -10,15 +10,16 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart"; // 👈 importa tu Cart.jsx
 import Login from "./components/auth/Login";
 
-import ProductFormContainer from "./admin/productForm/ProductFormContainer";
+import ManagerProduct from "./admin/manager/ManagerProduct";
 
 //import ProductBD from "./components/productBD/ProductBD";
 
-import ManagerAgregar from "./admin/manager/ManagerAgregar";
+import ManagerAgregar from "./admin/manager/ManagerAgregar"; // Prueba
 
 
 // Toast para los mensajes
 import { ToastContainer } from "react-toastify";
+
 
 function App() {
   return (
@@ -32,18 +33,22 @@ function App() {
           {/* ← sin path, solo wrapper */}
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
+          
           <Route path="/products" element={<Products />} />
           <Route path="products/:id" element={<ProductDetail />} />
+
           <Route path="/contact" element={<Contact />} />
           
-          <Route path="/register-product" element={<ProductFormContainer />} />
+          <Route path="/manager" element={<ManagerProduct />} />
 
+          {/*      Prueba      */}
           <Route path="/manager-agregar" element={<ManagerAgregar />} />
+
           {/* <Route path="/productBD" element={<ProductBD/>} /> */}
           
           <Route path="/login" element={<Login />} />
-          <Route path="/cart" element={<Cart />} />{" "}
-          {/* 👈 aquí agregas la ruta */}
+          <Route path="/cart" element={<Cart />} />    {/* 👈 aquí agregas la ruta */}
+          
         </Route>
       </Routes>
 

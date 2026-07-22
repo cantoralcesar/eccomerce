@@ -1,14 +1,17 @@
-import { useState } from 'react';
+// src/pages/Login.jsx
+import { useState } from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
+import LoginForm from "./LoginForm";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
   const handleLogin = (e) => {
     e.preventDefault();
-
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, email, password)
@@ -16,41 +19,27 @@ const Login = () => {
         const user = userCredential.user;
         console.log("Usuario logueado:", user);
         alert("¡Inicio de sesión exitoso!");
-        navigate('/'); //
+        navigate("/");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error("Error en el login:", errorCode, errorMessage);
-        alert("Error: " + errorMessage);
-    });
+        console.error("Error en el login:", error.code, error.message);
+        alert("Error: " + error.message);
+      });
   };
 
   return (
-    <div>
-      <h2>Iniciar Sesión</h2>
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="email: admin@gmail.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <input
-          type="password"
-          placeholder="Contraseña: admin1234"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        
-        <button type="submit">Ingresar</button>
-      </form>
-    </div>
+    <LoginForm
+      email={email}
+      password={password}
+      setEmail={setEmail}
+      setPassword={setPassword}
+      handleLogin={handleLogin}
+    />
   );
 };
 
 export default Login;
+
 
 
 /*

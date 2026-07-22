@@ -24,7 +24,8 @@ function Nav() {
                 {/*            componente ProductBD                 */}
                 {/* <li><Link to="/productBD">ProductBD</Link></li> */}
 
-                <li><Link to="/register-product">Ingresar productos</Link></li>
+                <li><Link to="/manager">Gestion Productos</Link></li>
+                
                 <li><Link to="/manager-agregar">Gestion Agregar Prueba</Link></li>
             </ul>
         </nav>

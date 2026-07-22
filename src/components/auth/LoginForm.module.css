@@ -1,0 +1,118 @@
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: calc(100vh - 300px); /* ocupa todo el espacio entre header y footer */
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    width: 100%;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    border-radius: 8px;
+    gap: 20px;
+    border: 1.5px solid var(--color-border-card);
+    box-sizing: border-box; /* 👈 asegura que padding no rompa el max-width */
+
+    /* 👇 Ajuste dinámico */
+    /* min-height: calc(100vh - 400px);
+    /* resta header + footer aprox. */
+}
+
+.loginForm h3 {
+    margin: 0 0 8px 0;
+    color: var(--color-texto);
+    font-size: 1.25rem;
+}
+
+.loginForm div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.loginForm label {
+    min-width: 140px;
+    font-weight: 500;
+    color: #444;
+}
+
+.loginForm input {
+    flex: 1;
+    padding: 6px 10px;
+    border: 1px solid var(--color-border-input);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.addBtnLogin {
+    display: block;
+    margin: 20px auto;    /* auto en los lados lo centra horizontalmente */
+    width: 80%;
+    padding: 0.75rem;
+    background-color: var(--color-btn);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.addBtnLogin:hover {
+    background-color: var(--color-btn-hover);
+}
+
+/* ============================
+    RESPONSIVE
+   ============================ */
+
+/* Tablets y móviles grandes */
+@media (max-width: 768px) {
+    .LoginForm {
+        margin: 1.5rem auto;
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    .LoginForm div {
+        flex-direction: column;   /* Label arriba, input abajo */
+        align-items: flex-start;  /* Alineados a la izquierda */
+        gap: 4px;
+    }
+
+    .LoginForm label {
+        min-width: auto;          /* Quita el ancho fijo */
+        font-size: 0.9rem;
+    }
+
+    .LoginForm input {
+        width: 100%;              /* Input ocupa todo el ancho */
+        padding: 10px;
+        font-size: 1rem;          /* Evita zoom en iOS */
+    }
+
+    .loginForm {
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .loginForm {
+        margin: 0.5rem auto;
+        padding: 0.75rem;
+        border-radius: 0;         /* Opcional: bordes planos en móvil */
+    }
+
+    .loginForm h3 {
+        font-size: 1.1rem;
+    }
+
+    .loginForm {
+        border-radius: 6px;
+    }
+}

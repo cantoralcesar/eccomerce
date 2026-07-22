@@ -5,10 +5,10 @@ import { Outlet } from "react-router-dom";
 
 export function Layout( ) {
     return (
-        <div>
+        <div className="layout-container" >
             <Header />    {/* nav, logo, cart */}
-            <main className="container-main">
-            <Outlet />    {/* ← aquí se inyectan las páginas */}
+            <main className="layout-main">
+              <Outlet />    {/* ← aquí se inyectan las páginas */}
             </main>
             <Footer />
         </div>
