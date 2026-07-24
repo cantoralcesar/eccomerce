@@ -17,8 +17,11 @@
 }
 
 .cartItemDetails {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     text-align: left;
+    /*border: 1px solid red;*/
 }
 
 .productName {
@@ -45,7 +48,9 @@
 }
 
 .cartItemSubtotal {
-    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    
     text-align: right;
     font-weight: bold;
 }
@@ -103,6 +108,12 @@
 @media (max-width: 600px) {
     .cartItemContainer {
         flex-direction: column;
+    }
+
+    .cartItemDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     }
 
     .cartItemSubtotal {

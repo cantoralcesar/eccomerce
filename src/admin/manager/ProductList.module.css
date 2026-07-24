@@ -1,0 +1,95 @@
+.prodListContainer ul {
+    list-style: none;
+}
+
+/* ============================
+    📋 ITEM DE LA LISTA
+   ============================ */
+.listItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 8px 12px;
+    /*border: 1px solid green;*/
+}
+
+/* ============================
+    🔘 BOTÓN DE ELIMINAR
+   ============================ */
+/* Estilos del Botón contenedor del icono */
+.deleteBtn {
+    background: none;             /* Fondo transparente */
+    border: none;                 /* Sin borde */
+    padding: 10px;                /* Área de clic cómoda */
+    cursor: pointer;              /* Cambia el cursor a mano */
+    display: flex;                /* Centra el icono dentro */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+/* ============================
+    🗑️ ICONO DE ELIMINAR
+   ============================ */
+/* Estilos del Icono de la papelera en estado normal */
+.trashIcon {
+    color: #6c757d;                                 /* Un gris suave por defecto */
+    font-size: 1.2rem;                                /* Ajusta el tamaño del icono */
+    transition: color 0.3s ease, transform 0.2s ease; /* Transición suave de 0.3s para el cambio de color */
+}
+
+/* --- EFECTO HOVER --- */
+
+/* Cuando pasas el mouse sobre el BOTÓN (.deleteProductBtn) */
+.deleteBtn:hover {
+  background-color: #f8d7da; /* Opcional: Un fondo rojo muy pálido */
+  transform: scale(1.15);
+}
+
+/* Y... cuando pasas el mouse sobre el BOTÓN, apuntamos al ICONO (.trashIcon) */
+.deleteBtn:hover .trashIcon {
+  color: #dc3545;          /* Cambia el icono a ROJO intenso */
+}
+
+/* ============================
+    📱 RESPONSIVE
+   ============================ */
+
+/* 🔹 Tablets (≤ 768px) */
+@media (max-width: 768px) {
+    .listItem {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px;
+    }
+
+    .deleteBtn {
+      align-self: flex-end;
+    }
+
+    .trashIcon {
+    font-size: 1.3rem;
+    }
+}
+
+/* 🔹 Celulares (≤ 480px) */
+@media (max-width: 480px) {
+  .listItem {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .trashIcon {
+    font-size: 1.2rem;
+  }
+
+  .deleteBtn {
+    padding: 4px;
+  }
+}
+
+
+

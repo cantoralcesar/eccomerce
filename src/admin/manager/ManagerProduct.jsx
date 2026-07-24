@@ -1,68 +1,92 @@
-// src/componentes/Gestion/Gestion.jsx
-import { useState, useEffect } from 'react';
 
-// Traer el ProductFormContainer (Lógica)
-import ProductFormContainer from '../productForm/ProductFormContainer';
+import { useState, useEffect } from 'react';
 
 import { db } from '../../firebase/firebaseConfig';
 
-import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { collection, onSnapshot, deleteDoc, doc } from "firebase/firestore";
+
+// Traer el ProductFormContainer (Lógica)
+import ProductFormContainer from '../productForm/ProductFormContainer';
+import ProductList from './ProductList';
+
+import styles from "../manager/ManagerProduct.module.css";
+
+import Swal from 'sweetalert2';
+
 
 const  ManagerProduct = () => {
     const [products, setProducts] = useState([]);
-    const initialStateForm = {
-        nombre: "",
-        precio: 0,
-        stock: 0,
-        imagen: "",
-        detalles: "",
-        destacado: "",
-        categoria:"",
-    };
+    
 
     useEffect(() => {
-        const loadProducts = async () => {
-            const productsRef = collection(db, "productos"); //Ajustar "productos" al nombre de tu colección
-            const resp = await getDocs(productsRef);
-            setProducts(
-                resp.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-            );
-        };
-        loadProducts();
+        // Referencia a la colección
+        const productsRef = collection(db, "productos");
+
+        // Suscripción en tiempo real
+        const unsubscribe = onSnapshot(productsRef, (snapshot) => {
+            setProducts(snapshot.docs.map((doc) => ({
+                ...doc.data(),
+                id: doc.id
+            })));
+        });
+
+        // Limpieza al desmontar
+        return () => unsubscribe();
     }, []);   /* dejar vacio [products] */
 
-    const handlDelete = async (id) => {
-        const confirmation = window.confirm("? Esta seguro de que desea eliminar este producto");
-        if (confirmation) {
-            const docRef = doc(db, "productos", id);
-            await deleteDoc(docRef);
-                // Actualizamos el estado local para reflejar el cambio en la UI inmediatamente.
-                setProducts(products.filter(prod => prod.id !== id));
-                alert("Producto eliminado");
+    const handleDelete = async (prod) => {
+
+        // Confirmación con SweetAlert2
+        const result = await Swal.fire({
+            title: '¿Está seguro?',
+            text: `Se eliminará el producto: ${prod.nombre}`, // 👈 mostramos el nombre
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: 'var(--color-btn)',
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        });
+
+        if (result.isConfirmed) {
+            try {
+                const docRef = doc(db, "productos", prod.id);
+                await deleteDoc(docRef);
+                setProducts(products.filter(p => p.id !== prod.id));
+
+                // Notificación de éxito
+                Swal.fire({
+                    title: 'Eliminado',
+                    text: `El producto "${prod.nombre}" fue eliminado correctamente`, // 👈 mensaje personalizado
+                    icon: 'success',
+                    timer: 2000,
+                    showConfirmButton: false
+                });
+            } catch (error){
+                // Notificación de error
+                Swal.fire({
+                    title: 'Error',
+                    text: `No se pudo eliminar el producto: ${error.message}`,  // 👈 aquí mostramos el detalle
+                    icon: 'error'
+                });
+            }
         }
-    }
+    };
 
     return (
         <div>
             <h2>Gestión de Productos</h2>
-            <hr />
             {/* Renderiza el ProductFormContainer*/}
             <ProductFormContainer />
-            <hr />
-            <h3>Lista de Productos </h3>
-            <ul>
-                {products.map((prod) => (
-                    <li key={prod.id}>
-                        {prod.nombre} - ${prod.precio} - {prod.stock}
-                        {/*acá agregaremos los botones de acción: editar, eliminar */}
-                        <button onClick={() => handlDelete(prod.id)}
-                            style={{marginLeft: '10px'}}
-                            >Eliminar
-                        </button>
-                    </li>
-                ))}
-            </ul>
-    </div>
+            <hr  className={styles.separator} />
+
+            <h2 className={styles.sectionTitle}>Lista de Productos</h2>
+
+            <div className={styles.managerProdList} >
+                <ProductList products={products} onDelete={handleDelete} />
+            </div>
+            
+        </div>
     );
 };
 export default ManagerProduct;

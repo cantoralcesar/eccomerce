@@ -21,26 +21,28 @@ function ProductForm({ formData, handleChange, handleShipment, handleChangeImage
                 />
             </div>
 
-            <div>
-                <label>Precio:</label>
-                <input 
-                    type="number"
-                    placeholder="Ej: 95"
-                    name="precio" // Atributo clave
-                    value={formData.precio}
-                    onChange={handleChange}
-                />
-            </div>
+            <div className={styles.rowProductForm}>
+                <div className={styles.field}>
+                    <label>Precio:</label>
+                    <input
+                        type="number"
+                        placeholder="Ej: 95"
+                        name="precio" // Atributo clave
+                        value={formData.precio}
+                        onChange={handleChange}
+                    />
+                </div>
 
-            <div>
-                <label>Stock:</label>
-                <input 
-                    type="number"
-                    placeholder="Ej: 5"
-                    name="stock" // Atributo clave
-                    value={formData.stock}
-                    onChange={handleChange}
-                />
+                <div className={styles.field}>
+                    <label >Stock:</label>
+                    <input
+                        type="number"
+                        placeholder="Ej: 5"
+                        name="stock" // Atributo clave
+                        value={formData.stock}
+                        onChange={handleChange}
+                    />
+                </div>
             </div>
             
             <div>

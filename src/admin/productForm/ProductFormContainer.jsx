@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import ProductForm from "./ProductForm"
 
+import Swal from "sweetalert2";
+
 // IMPORTACIONES CLAVE DE FIREBASE
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 
@@ -41,14 +43,28 @@ function ProductFormContainer() {
     const handleShipment = async (evento) => {    // Manejar envio
       evento.preventDefault();
 
+      // Validación de campos obligatorios
+      if (!formData.nombre || !formData.precio || !formData.stock || !formData.detalles || !formData.categoria || !formData.destacado) {
+        Swal.fire({
+          title: "Campos requeridos",
+          text: "Por favor, completa todos los campos obligatorios antes de guardar.",
+          icon: "warning"
+        });
+        return;
+      }
+
       // Validamos que el usuario haya seleccionado una imagen
       if (!imageFile) {
-        alert("Por favor, selecciona una imagen para el producto.");
+        Swal.fire({
+            title: "Imagen requerida",
+            text: "Por favor, selecciona una imagen para el producto.",
+            icon: "warning"
+        });
         return;
       }
 
       setLoading(true);
-      console.log("Loading...")
+      //console.log("Loading...")
 
       // --- Lógica para subir la imagen a Imgbb ---//
       const apikey = '5116d4af1dc2e1e948f30e2b4486750e';
@@ -56,7 +72,7 @@ function ProductFormContainer() {
       dataForm.append('image', imageFile);
 
       try {
-        console.log("Subiendo imagen a Imgbb...");
+        //console.log("Subiendo imagen a Imgbb...");
         const answerImgbb = await fetch(`https://api.imgbb.com/1/upload?key=${apikey}`, {
             method: 'POST',
             body:dataForm,
@@ -75,7 +91,7 @@ function ProductFormContainer() {
             };
 
             // LÓGICA PARA SUBIR DATOS A FIRESTORE
-            console.log('Enviando producto a Firebase', productComplete);
+            //console.log('Enviando producto a Firebase', productComplete);
 
             // Obtenemos la instancia de la base de datos
             const db = getFirestore();
@@ -86,12 +102,36 @@ function ProductFormContainer() {
             // Agregamos el nuevo documento a la colección
             await addDoc(productCollection, productComplete);
 
+            // ✅ Notificación de éxito
+            Swal.fire({
+              title: "Agregado",
+              text: `El producto "${formData.nombre}" fue agregado correctamente`,
+              icon: "success",
+              timer: 2000,
+              showConfirmButton: false
+            });
+
+            setFormData({
+              nombre: "",
+              precio: "",
+              stock: "",
+              detalles: "",
+              categoria: "",
+              destacado: "",
+            });
+            setImageFile(null);
+
           } else {
                 throw new Error('La subida de la imagen a Imgbb falló.');
           }
       } catch (error) {
-            console.error("Error en el proceso de envío:", error);
-            alert("Hubo un error al subir la imagen. Por favor, intentá de nuevo.");
+            //console.error("Error en el proceso de envío:", error);
+            // ❌ Notificación de error
+            Swal.fire({
+              title: "Error",
+              text: `Hubo un problema al agregar el producto. Detalle: ${error.message}`,
+              icon: "error"
+            });
       } finally {
         // Desactivar loading
         setLoading(false);

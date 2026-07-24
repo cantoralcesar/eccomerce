@@ -41,24 +41,24 @@ export const CartProvider = ({ children }) => {
     };
 
     // 👉 Eliminar producto del carrito
-const removeFromCart = (productId) => {
-    setCartItems(prevCart =>
-        prevCart.filter(item => item.id !== productId)
-    );
-};
+    const removeFromCart = (productId) => {
+        setCartItems(prevCart =>
+            prevCart.filter(item => item.id !== productId)
+        );
+    };
 
 // 👉 Disminuir cantidad
-const decreaseFromCart = (productId) => {
-    setCartItems(prevCart =>
-        prevCart
-            .map(item =>
-                item.id === productId
-                    ? { ...item, quantity: item.quantity - 1 }
-                    : item
-            )
-            .filter(item => item.quantity > 0) // elimina si llega a 0
-    );
-};
+    const decreaseFromCart = (productId) => {
+        setCartItems(prevCart =>
+            prevCart
+                .map(item =>
+                    item.id === productId
+                        ? { ...item, quantity: item.quantity - 1 }
+                        : item
+                )
+                .filter(item => item.quantity > 0) // elimina si llega a 0
+        );
+    };
 
     // Vaciar carrito
     const clearCart = () => {
@@ -76,12 +76,12 @@ const decreaseFromCart = (productId) => {
     };
 
     return (
-    <CartContext.Provider
-        value={{
-            cartItems, addToCart, clearCart,
-            removeFromCart, decreaseFromCart,
-            getCartQuantity, getCartTotal}}>
-            {children}
-    </CartContext.Provider>
+        <CartContext.Provider
+            value={{
+                cartItems, addToCart, clearCart,
+                removeFromCart, decreaseFromCart,
+                getCartQuantity, getCartTotal}}>
+                {children}
+        </CartContext.Provider>
     );
 };

@@ -82,7 +82,7 @@ function CartItem({ item }) {
             
             {/* Subtotal por producto */}
             <div className={styles.cartItemSubtotal}>
-                Subtotal: ${item.precio * item.quantity}
+                Subtotal: ${(item.precio * item.quantity).toFixed(2)}
             </div>
 
             <div>

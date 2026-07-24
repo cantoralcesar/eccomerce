@@ -22,8 +22,45 @@
     gap: 8px;
 }
 
+
+
+/* Quita el estilo global de todos los div */
+.prodForm > div:not(.rowProductForm) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Precio y Stock*/
+.rowProductForm {
+    display: flex;
+    gap: 16px;      /* espacio entre Precio y Stock*/
+}
+
+/* Aplica solo a los inputs dentro de la fila especial */
+.rowProductForm input {
+  width: 120px;   /* 👈 ancho fijo más pequeño */
+  flex: unset;    /* 👈 evita que se estiren */
+}
+
+
+.field {
+    flex: 1;                /* cada campo ocupa la mitad */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.field label {
+    min-width: 50px;        /* ancho fijo para alinear */
+}
+/*      */
+
+
+
+
 .prodForm label {
-    min-width: 140px;
+    min-width: 100px;
     font-weight: 500;
     color: #444;
 }
@@ -53,9 +90,9 @@
     background-color: var(--color-btn-hover);
 }
 
-/* ============================
-    RESPONSIVE
-   ============================ */
+/* =============================
+            RESPONSIVE
+   ============================= */
 
 /* Tablets y móviles grandes */
 @media (max-width: 768px) {
@@ -63,12 +100,13 @@
         margin: 1.5rem auto;
         padding: 1rem;
         max-width: 90%;
+        font-size: 1rem;
     }
 
     .prodForm div {
         flex-direction: column;   /* Label arriba, input abajo */
-        align-items: flex-start;  /* Alineados a la izquierda */
         gap: 4px;
+        width: 100%;
     }
 
     .prodForm label {
@@ -77,14 +115,22 @@
     }
 
     .prodForm input {
-        width: 100%;              /* Input ocupa todo el ancho */
-        padding: 10px;
+        width: 100%;              /* 👈 asegura que el input ocupe todo el ancho */
+        padding: 6px 10px;
+        border-radius: 4px;
         font-size: 1rem;          /* Evita zoom en iOS */
     }
 
-    .prodForm {
-        padding: 14px;
-        font-size: 1rem;
+
+    /* Precio y Stock: se apilan y ocupan todo el ancho */
+    .rowProductForm {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .rowProductForm input {
+        width: 100%;              /* 👈 cada input ocupa todo el ancho */
     }
 }
 
