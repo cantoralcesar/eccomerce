@@ -17,7 +17,8 @@ import Swal from 'sweetalert2';
 const  ManagerProduct = () => {
     const [products, setProducts] = useState([]);
     
-
+    
+    
     useEffect(() => {
         // Referencia a la colección
         const productsRef = collection(db, "productos");
@@ -77,7 +78,12 @@ const  ManagerProduct = () => {
         <div>
             <h2>Gestión de Productos</h2>
             {/* Renderiza el ProductFormContainer*/}
-            <ProductFormContainer />
+            <ProductFormContainer
+                //formData={formData}
+                //handleChange={handleChange}
+                //handleChangeImage={handleChangeImage}
+                //handleShipment={handleShipment}
+            />
             <hr  className={styles.separator} />
 
             <h2 className={styles.sectionTitle}>Lista de Productos</h2>

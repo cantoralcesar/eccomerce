@@ -62,6 +62,7 @@
 .prodForm label {
     min-width: 100px;
     font-weight: 500;
+    padding: 0 0 0 10px;
     color: #444;
 }
 
@@ -72,6 +73,7 @@
     border-radius: 4px;
     font-size: 0.9rem;
 }
+
 
 .addBtnProduct {
     display: block;

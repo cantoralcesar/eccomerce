@@ -1,4 +1,4 @@
-import { FaRegTrashAlt } from 'react-icons/fa'; // 👈 Importamos el icono
+import { FaRegTrashAlt, FaEdit } from 'react-icons/fa'; // 👈 Importamos el icono
 
 import styles from "../manager/ProductList.module.css";
 
@@ -19,6 +19,9 @@ const ProductList = ({ products, onDelete }) => {
                         >
                         {/* El icono es un componente React. El color lo daremos por CSS */}
                         <FaRegTrashAlt className={styles.trashIcon} />
+                        
+                        <FaEdit className={styles.updateIcon} />
+
                         </button>
                     </li>
                 ))}
